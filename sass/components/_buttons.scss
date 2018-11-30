@@ -1,0 +1,24 @@
+.btn{
+    &,&:visited{
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include transition();
+    }
+
+    &.primary-btn{
+        background: $secondary-color;
+        color: $primary-color;
+
+        &:hover{
+            background:$primary-color;
+            color:$dark-bg-text-color;
+        }
+    }
+
+    &.read-more-btn{
+        padding: 5px 20px;
+        font: normal 1rem 'poppins';
+        @extend %box-sizing;
+    }
+}

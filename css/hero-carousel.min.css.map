@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,cADU,CACV,UAAU,AAAC,CACP,QAAQ,CAAE,QAAQ,CAOrB,AATL,AAIQ,cAJM,CACV,UAAU,CAGN,GAAG,AAAC,CACA,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CAEb",
+    "sources": [
+        "../sass/modules/hero-carousel.scss"
+    ],
+    "names": [],
+    "file": "hero-carousel.min.css"
+}

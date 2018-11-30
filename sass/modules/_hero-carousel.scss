@@ -1,0 +1,58 @@
+.hero-carousel {
+    .owl-item{
+        position: relative;
+    }
+    .hero-item {
+        position: relative;
+        height:calc(100vh - #{$header-height});
+        @extend %pseudo-vertical-align;
+
+        &:after{
+            content: '';
+            display:block;
+            position:absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+            z-index:10;
+            background:$primary-color;
+            opacity:0.45;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            @extend %object-fit-cover;
+        }
+    }
+
+    .hero-desc {
+        text-align: left;
+        position:relative;
+        z-index:20;
+        @extend %vertical-align;
+    }
+
+    h2{
+        margin-bottom: 30px;
+        font-size: 48rem / strip-unit($body-font-size);
+        line-height: 0.9em;
+    }
+    .hero-title {
+        color: #fff;
+        text-decoration: none;
+        border-left: 3px solid $secondary-color;
+        padding-left: 20px;
+        display:inline-block;
+    }
+    p{
+        font-size: 18rem / strip-unit($body-font-size);
+        color:#fff;
+        margin-bottom:30px;
+    }
+}

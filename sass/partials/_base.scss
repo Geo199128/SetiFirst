@@ -6,9 +6,17 @@
 @import 'mixins';
 @import 'placeholders';
 
+html,body{
+    min-height:100vh;
+}
 body{
     font:normal 14px 'Roboto';
     background: #000;
+    overflow-x:hidden;
+
+    main{
+        min-height:calc(100vh - #{$header-height});
+    }
 }
 
 .container{

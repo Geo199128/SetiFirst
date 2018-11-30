@@ -1,7 +1,9 @@
 header {
     background: #fff;
-    height: 75px;
+    height: $header-height;
     text-align: center;
+    position:relative;
+    z-index:100;
     @extend %pseudo-vertical-align;
 
     li {
@@ -40,9 +42,11 @@ header {
             overflow: hidden;
             height: 40px;
             @extend %pseudo-vertical-align;
+            text-align:left;
 
             .main-menu {
                 @extend %vertical-align;
+                text-align:left;
 
                 li {
                     a {
@@ -71,10 +75,6 @@ header {
                 li {
                     padding: 0 10px;
                     @extend %box-sizing;
-
-                    .social-icon {
-                        @extend %social-icon;
-                    }
                 }
             }
         }
@@ -82,13 +82,15 @@ header {
         .bottom-nav {
             position: absolute;
             top: 100%;
+            left:-15px;
+            right:-15px;
 
             a {
 
                 &,
                 &:visited {
                     color: #fff;
-                    line-height: 75px;
+                    line-height: $header-height;
                     height: 100%;
                     display: block;
                     opacity: 1;
