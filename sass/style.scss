@@ -1,20 +1,2 @@
-@import 'base';
-
-.header1 {
-    font: 900 25px 'Poppins',Arial;
-}
-.header2 {
-    font: bold 25px 'Poppins',Arial;
-}
-.header3 {
-    font: normal 25px 'Poppins',Arial;
-}
-.header4 {
-    font: 900 25px 'Roboto',Arial;
-}
-.header5 {
-    font: bold 25px 'Roboto',Arial;
-}
-.header6 {
-    font: normal 25px 'Roboto',Arial;
-}
+@import 'partials/base';
+@import 'modules/all';

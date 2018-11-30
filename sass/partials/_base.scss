@@ -1,0 +1,23 @@
+@import 'reset';
+@import 'functions';
+@import 'variables';
+@import 'typography';
+@import 'icons';
+@import 'mixins';
+@import 'placeholders';
+
+body{
+    font:normal 14px 'Roboto';
+    background: #000;
+}
+
+.container{
+    width:1200px;
+    margin:0 auto;
+    position:relative;
+}
+
+h2{
+    font:900 $h2-font-size 'Poppins';
+    text-transform: uppercase;
+}
