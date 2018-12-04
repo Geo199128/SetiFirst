@@ -27,6 +27,11 @@
     object-fit: cover;
 }
 
+%background-size-cover{
+    background-size:cover!important;
+    background-position:50%!important;
+}
+
 /*Social media*/
 %instagram-background {
     background: rgba(253, 244, 151, 1);

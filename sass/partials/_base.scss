@@ -11,7 +11,7 @@ html,body{
 }
 body{
     font:normal 14px 'Roboto';
-    background: #000;
+    //background: #000;
     overflow-x:hidden;
 
     main{
@@ -26,6 +26,26 @@ body{
 }
 
 h2{
-    font:900 $h2-font-size 'Poppins';
+    font:900 #{$h2-font-size}/1em 'Poppins';
     text-transform: uppercase;
+    color:#012349;
+    text-align:center;
+    margin-bottom:$title-margin;
+}
+
+h3{
+    font:900 #{$h3-font-size}/1em 'Poppins';
+    color:#012349;
+    margin:15px 0 20px;
+}
+
+p{
+    font:normal $body-font-size 'Roboto';
+    color:#737373;
+    margin-bottom:15px;
+}
+
+.section-margin{
+    padding:$section-padding 0;
+    @extend %box-sizing;
 }

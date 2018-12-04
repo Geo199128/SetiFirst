@@ -1,0 +1,109 @@
+.hero-carousel {
+    text-align: center;
+
+    .owl-item {
+        position: relative;
+    }
+
+    .hero-item {
+        position: relative;
+        height:calc(100vh - #{$header-height});
+        //background-attachment:scroll!important;
+        @extend %pseudo-vertical-align;
+        @extend %background-size-cover;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 10;
+            background: $primary-color;
+            opacity: 0.45;
+        }
+    }
+
+    .hero-desc {
+        text-align: left;
+        position: relative;
+        z-index: 20;
+        @extend %vertical-align;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        font-size: 48rem / strip-unit($body-font-size);
+        line-height: 0.9em;
+        text-align:left;
+    }
+
+    .hero-title {
+        color: #fff;
+        text-decoration: none;
+        border-left: 3px solid $secondary-color;
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    p {
+        font-size: 18rem / strip-unit($body-font-size);
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        bottom: 50px;
+        display: inline-block;
+
+        button {
+            width: 40px;
+            height: 40px;
+            background: $secondary-color!important;
+            border-radius: 100%;
+            overflow: hidden;
+            font-size: 35rem / strip-unit($body-font-size)!important;
+            position: relative;
+            color: #fff!important;
+            margin: 0 10px;
+
+            &.owl-prev {
+                @include transform(rotate(180deg));
+            }
+
+            i {
+                top: 50%;
+                line-height: 1rem;
+                position: absolute;
+                left: 0;
+                right: 0;
+                @include transform(translateY(-50%));
+            }
+        }
+    }
+
+    .owl-dots{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        right: 20px;
+        @include transform(translateY(-50%));
+
+        button{
+            width: 3px;
+            height: 60px;
+            background: #fff!important;
+            display: block;
+            margin: 10px 0;
+            display: block;
+            @include transition();
+
+            &.active{
+                background: $secondary-color!important;
+            }
+        }
+    }
+}

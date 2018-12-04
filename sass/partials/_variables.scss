@@ -9,6 +9,11 @@ $twitter-color:#38A1F3;
 /*Font sizes*/
 $body-font-size:14px;
 $h2-font-size:40rem / strip-unit($body-font-size);
+$h3-font-size:18rem / strip-unit($body-font-size);
 
 /*Heights*/
 $header-height:75px;
+
+/*Margins and padding*/
+$section-padding:50px;
+$title-margin:50px;
