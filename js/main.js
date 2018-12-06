@@ -1,35 +1,40 @@
 //Init carousels
 var InitCarousels = function () {
-    var heroCarousel = $('.hero-carousel');
+    var heroCarousel = $('.hero-carousel .hero-list');
+    var latestNewsCarousel = $('.latest-news-carousel');
     if (heroCarousel.length) {
-        heroCarousel.owlCarousel({
-            items: 1,
-            loop: true,
-            /*stagePadding: 0,
-            singleItem:true,
-            margin:0,*/
-            //autoplay:true,
-            autoplayTimeout: 5000,
-            nav: true,
-            navText: ['<i class="icon-right-arrow"></i>', '<i class="icon-right-arrow"></i>'],
+        heroCarousel.slick({
+            infinite: true,
+            autoplay:true,
+            autoplaySpeed: 4000,
+            speed: 1200,
+            arrows: true,
+            prevArrow:$('.hero-prev'),
+            nextArrow:$('.hero-next'),
             dots: true,
-            mouseDrag: true,
-            touchDrag: true,
+            cssEase: 'ease-out'
+        });
+    }
+
+    if (latestNewsCarousel.length) {
+        latestNewsCarousel.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true
         });
     }
 }
 
 //Init parallax
 var InitParallax = function () {
-    //$('.parallaxie').parallaxie();
-    $('.parallaxie').miniParallax({
-        inset: 1,
-        speed: 0.15
+    $(".paroller").paroller({
+        factor: 0.3,
+        factorXs: 0.2
     });
-
 }
 
 $(document).ready(function () {
     InitCarousels();
-    //InitParallax();
+    InitParallax();
 });

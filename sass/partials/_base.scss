@@ -5,6 +5,7 @@
 @import 'icons';
 @import 'mixins';
 @import 'placeholders';
+@import 'animations';
 
 html,body{
     min-height:100vh;
@@ -20,7 +21,8 @@ body{
 }
 
 .container{
-    width:1200px;
+    width:calc(100% - 30px);
+    max-width:1170px;
     margin:0 auto;
     position:relative;
 }

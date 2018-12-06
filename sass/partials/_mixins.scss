@@ -15,6 +15,11 @@
     transition-delay: $transition-delay;
 }
 
+@mixin animation($animation...){
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
 @mixin transform($transform...) {
     -webkit-transform: $transform;
     -moz-transform: $transform;
@@ -35,6 +40,11 @@
     -webkit-box-shadow: $box-shadow;
     -moz-box-shadow: $box-shadow;
     box-shadow: $box-shadow;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
 }
 
 @mixin placeholder {

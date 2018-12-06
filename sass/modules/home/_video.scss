@@ -1,0 +1,48 @@
+.home-video {
+    @extend %screen-height;
+    @extend %pseudo-vertical-align;
+    @extend %background-size-cover;
+
+    .container {
+        text-align: left;
+        @extend %vertical-align;
+        position: relative;
+
+        &:before{
+            content:'';
+            display:block;
+            float:right;
+            width:calc(100% - #{$video-button-width});
+            height:1px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        i {
+            display: block;
+            width: $video-button-width;
+            height: $video-button-width;
+            line-height: $video-button-width;
+            background: $secondary-color;
+            border-radius: 100%;
+            color: #fff;
+            font-size: 2rem;
+            text-align: center;
+            cursor: pointer;
+            margin: ($video-button-width / -2) 0 20px;
+            position:relative;
+            z-index:10;
+            @include animation(pulse 1s infinite);
+
+            &:hover{
+                animation-play-state: paused;
+            }
+        }
+
+        span {
+            display: block;
+            font: normal 1.28rem 'Roboto';
+            text-transform:uppercase;
+            color: #fff;
+        }
+    }
+}

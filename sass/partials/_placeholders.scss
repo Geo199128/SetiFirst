@@ -1,4 +1,15 @@
 /*General*/
+%remove-default-style{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    border-radius:0;
+    border:0;
+    box-shadow:0;
+    outline:0;
+    background: transparent;
+}
+
 %vertical-align {
     display: inline-block;
     vertical-align: middle;
@@ -29,7 +40,10 @@
 
 %background-size-cover{
     background-size:cover!important;
-    background-position:50%!important;
+}
+
+%screen-height{
+    height:calc(100vh - #{$header-height});
 }
 
 /*Social media*/
