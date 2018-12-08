@@ -34,7 +34,7 @@ header {
             &,
             &:visited {
                 text-decoration: none;
-                font: normal (18rem / strip-unit($body-font-size)) 'Roboto';
+                font: normal $body-font-size 'Roboto';
                 @include transition(all 0.3s);
             }
         }
@@ -54,7 +54,6 @@ header {
 
                         &,
                         &:visited {
-                            font: normal (18rem / strip-unit($body-font-size)) 'Roboto';
                             color: $primary-color;
                             opacity: 0.7;
                             padding: 0 15px;

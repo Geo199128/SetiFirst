@@ -61,3 +61,11 @@
         @content
     }
 }
+
+@mixin multi-line-fade($bg-color:#fff,$line-height:$p-line-height){
+    &:after{
+        height: $line-height;
+        background: linear-gradient(to bottom, rgba($bg-color, 0), rgba($bg-color, 0.9) 90%);
+    }
+    @extend %multi-line-fade;
+}

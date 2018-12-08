@@ -50,36 +50,7 @@
     }
 
     .hero-nav {
-        position: absolute;
         bottom: 50px;
-        display: inline-block;
-
-        a {
-            float:left;
-            display:inline-block;
-            width: 40px;
-            height: 40px;
-            background: $secondary-color !important;
-            border-radius: 100%;
-            overflow: hidden;
-            font-size: 35rem / strip-unit($body-font-size) !important;
-            position: relative;
-            color: #fff !important;
-            margin: 0 10px;
-
-            &.hero-prev {
-                @include transform(rotate(180deg));
-            }
-
-            i {
-                top: 50%;
-                line-height: 1rem;
-                position: absolute;
-                left: 0;
-                right: 0;
-                @include transform(translateY(-50%));
-            }
-        }
     }
 
     .slick-dots {

@@ -1,16 +1,18 @@
 //Init carousels
 var InitCarousels = function () {
-    var heroCarousel = $('.hero-carousel .hero-list');
-    var latestNewsCarousel = $('.latest-news-carousel');
-    if (heroCarousel.length) {
-        heroCarousel.slick({
+    var heroCarousel = $('.hero-carousel'),
+    heroList = heroCarousel.find('.hero-list'),
+    newsSectionContainer = $('.latest-news .container');
+    latestNewsCarousel = $('.latest-news-carousel');
+    if (heroList.length) {
+        heroList.slick({
             infinite: true,
             autoplay:true,
             autoplaySpeed: 4000,
-            speed: 1200,
+            speed: 700,
             arrows: true,
-            prevArrow:$('.hero-prev'),
-            nextArrow:$('.hero-next'),
+            prevArrow:heroCarousel.find('.hero-prev'),
+            nextArrow:heroCarousel.find('.hero-next'),
             dots: true,
             cssEase: 'ease-out'
         });
@@ -20,8 +22,10 @@ var InitCarousels = function () {
         latestNewsCarousel.slick({
             slidesToShow: 3,
             slidesToScroll: 1,
-            dots: true,
-            arrows: true
+            arrows: true,
+            prevArrow:newsSectionContainer.find('.hero-prev'),
+            nextArrow:newsSectionContainer.find('.hero-next'),
+            infinite:false
         });
     }
 }

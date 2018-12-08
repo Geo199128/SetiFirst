@@ -3,8 +3,8 @@
 @import 'variables';
 @import 'typography';
 @import 'icons';
-@import 'mixins';
 @import 'placeholders';
+@import 'mixins';
 @import 'animations';
 
 html,body{
@@ -42,7 +42,7 @@ h3{
 }
 
 p{
-    font:normal $body-font-size 'Roboto';
+    font:normal #{$body-font-size}/#{$p-line-height} 'Roboto';
     color:#737373;
     margin-bottom:15px;
 }
@@ -50,4 +50,61 @@ p{
 .section-margin{
     padding:$section-padding 0;
     @extend %box-sizing;
+}
+
+.carousel-nav{
+        position: absolute;
+        display: inline-block;
+        width:100%;
+        text-align:center;
+        left:0;
+
+        a {
+            display:inline-block;
+            width: 40px;
+            height: 40px;
+            background: $secondary-color !important;
+            border-radius: 100%;
+            overflow: hidden;
+            font-size: 35rem / strip-unit($body-font-size) !important;
+            position: relative;
+            color: #fff !important;
+            margin: 0 10px;
+
+            &.hero-prev {
+                @include transform(rotate(180deg));
+            }
+
+            i {
+                top: 50%;
+                line-height: 1rem;
+                position: absolute;
+                left: 0;
+                right: 0;
+                @include transform(translateY(-50%));
+            }
+        }
+}
+
+.background-title{
+    position:relative;
+    overflow-x:hidden;
+
+    &:before{
+        content:attr(title);
+        display:block;
+        position:absolute;
+        top:35%;
+        text-transform:uppercase;
+        font:900 (170rem / strip-unit($body-font-size)) 'Poppins';
+        opacity:0.09;
+        white-space:nowrap;
+    }
+
+    &.left-background-title:before{
+        @include transform(translateY(-50%) translateX(-30%));
+    }
+    &.right-background-title:before{
+        @include transform(translateY(-50%) translateX(70%));
+    }
 }

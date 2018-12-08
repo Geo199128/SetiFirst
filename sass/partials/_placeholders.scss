@@ -1,12 +1,12 @@
 /*General*/
-%remove-default-style{
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    border-radius:0;
-    border:0;
-    box-shadow:0;
-    outline:0;
+%remove-default-style {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0;
+    outline: 0;
     background: transparent;
 }
 
@@ -21,9 +21,10 @@
 }
 
 %pseudo-vertical-align {
-    &{
-        text-align:center;
+    & {
+        text-align: center;
     }
+
     &:before {
         content: '';
         width: 0;
@@ -38,12 +39,26 @@
     object-fit: cover;
 }
 
-%background-size-cover{
-    background-size:cover!important;
+%background-size-cover {
+    background-size: cover !important;
 }
 
-%screen-height{
+%screen-height {
     height:calc(100vh - #{$header-height});
+}
+
+%multi-line-fade {
+    overflow: hidden;
+    position: Relative;
+
+    &:after {
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
 }
 
 /*Social media*/

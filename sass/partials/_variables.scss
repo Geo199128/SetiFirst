@@ -11,6 +11,9 @@ $body-font-size:14px;
 $h2-font-size:40rem / strip-unit($body-font-size);
 $h3-font-size:18rem / strip-unit($body-font-size);
 
+/*Line height*/
+$p-line-height:1.2rem;
+
 /*Heights*/
 $header-height:75px;
 $video-button-width:70px;
