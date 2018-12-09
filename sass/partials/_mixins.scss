@@ -47,21 +47,6 @@
     background: rgba($color, $opacity);
 }
 
-@mixin placeholder {
-    input::-webkit-input-placeholder {
-        @content
-    }
-    input::-moz-placeholder {
-        @content
-    }
-    input:-ms-input-placeholder {
-        @content
-    }
-    input:-moz-placeholder {
-        @content
-    }
-}
-
 @mixin multi-line-fade($bg-color:#fff,$line-height:$p-line-height){
     &:after{
         height: $line-height;

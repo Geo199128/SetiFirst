@@ -1,8 +1,11 @@
 .btn{
     &,&:visited{
+        @extend %reset-fields-look;
         display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
+        padding: 5px 20px;
+        @extend %box-sizing;
         @include transition();
     }
 
@@ -16,9 +19,22 @@
         }
     }
 
+    &.secondary-btn{
+        background: $primary-color;
+        color:#fff;
+        border:2px solid $primary-color;
+
+        &:hover{
+            background: transparent;
+            color:$primary-color;
+        }
+    }
+
     &.read-more-btn{
-        padding: 5px 20px;
         font: normal 1rem 'poppins';
-        @extend %box-sizing;
+    }
+
+    &.check-all-btn{
+        font:900 1rem 'poppins';
     }
 }

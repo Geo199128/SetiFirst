@@ -1,0 +1,17 @@
+.form-section{
+    background:$secondary-color;
+
+    .form-container{
+        display:inline-block;
+        margin:0 -10px;
+        width:100%;
+    }
+
+    .form-btns{
+        text-align:center;
+
+        .btn{
+            display:inline-block;
+        }
+    }
+}
