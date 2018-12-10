@@ -106,9 +106,11 @@ p{
     }
 
     &.left-background-title:before{
-        @include transform(translateY(-50%) translateX(-30%));
+        //@include transform(translateY(-50%) translateX(-30%));
+        @include animation(slide-to-right linear 150s infinite);
     }
     &.right-background-title:before{
-        @include transform(translateY(-50%) translateX(70%));
+        //@include transform(translateY(-50%) translateX(70%));
+        @include animation(slide-to-left linear 150s infinite);
     }
 }
