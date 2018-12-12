@@ -1,0 +1,97 @@
+.hero-carousel {
+    text-align: center;
+
+    .hero-item {
+        position: relative;
+        @extend %pseudo-vertical-align;
+        @extend %background-size-cover;
+        @extend %screen-height;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 10;
+            background: $primary-color;
+            opacity: 0.45;
+        }
+    }
+
+    .hero-desc {
+        text-align: left;
+        position: relative;
+        z-index: 20;
+        @extend %vertical-align;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        font-size: 48rem / strip-unit($body-font-size);
+        line-height: 0.9em;
+        text-align: left;
+    }
+
+    .hero-title {
+        color: #fff;
+        text-decoration: none;
+        border-left: 3px solid $secondary-color;
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    p {
+        font-size: 18rem / strip-unit($body-font-size);
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .hero-nav {
+        bottom: 50px;
+    }
+
+    .slick-dots {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        right: 20px;
+        list-style: none;
+        @include transform(translateY(-50%));
+
+        li {
+            height: 60px;
+
+            button {
+                margin: 10px -5px;
+                color: transparent;
+                height:60px;
+                display:block;
+                padding:0 5px;
+                cursor:pointer;
+                @extend %remove-default-style;
+
+                &:before {
+                    content:'';
+                    width: 3px;
+                    height: 60px;
+                    background: #fff !important;
+                    display: block;
+                    border-radius:10px;
+                    margin:0;
+                    @include transition();
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &:before {
+                        background: $secondary-color !important;
+                    }
+                }
+            }
+        }
+    }
+}

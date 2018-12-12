@@ -1,0 +1,40 @@
+.btn{
+    &,&:visited{
+        @extend %reset-fields-look;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 5px 20px;
+        @extend %box-sizing;
+        @include transition();
+    }
+
+    &.primary-btn{
+        background: $secondary-color;
+        color: $primary-color;
+
+        &:hover{
+            background:$primary-color;
+            color:$dark-bg-text-color;
+        }
+    }
+
+    &.secondary-btn{
+        background: $primary-color;
+        color:#fff;
+        border:2px solid $primary-color;
+
+        &:hover{
+            background: transparent;
+            color:$primary-color;
+        }
+    }
+
+    &.read-more-btn{
+        font: normal 1rem 'poppins';
+    }
+
+    &.check-all-btn{
+        font:900 1rem 'poppins';
+    }
+}

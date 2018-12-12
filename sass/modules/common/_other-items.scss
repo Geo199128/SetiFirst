@@ -1,0 +1,84 @@
+.other-section {
+    text-align: center;
+    @extend %background-size-cover;
+
+    h3 {
+        font: bold 2.14rem/1.1em 'Poppins';
+        text-transform: uppercase;
+    }
+
+    .btn {
+        display: inline-block;
+    }
+
+    .other-items {
+        margin-top: 50px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .other-item-container {
+        width: 25%;
+        float: left;
+
+        .item {
+            width: 1200px * 0.25 * 0.85;
+            height: 1200px * 0.25 * 0.85;
+            background: $secondary-color;
+            border-radius: 100%;
+            //overflow: hidden;
+            display: inline-block;
+            @include box-shadow(0px 4px 18px 0px rgba(0, 0, 0, 0.1));
+
+            a {
+
+                &,
+                &:visited {
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    .other-img {
+                        @include transform(translateY(-15px));
+                    }
+
+                    h4 {
+                        @include transform(translateY(-10px));
+                    }
+                }
+            }
+
+            .other-img {
+                width: 101%;
+                height: 101%;
+                border-radius: 100%;
+                @include transition(all ease 0.8s);
+                @extend %pseudo-vertical-align;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.1);
+                    border-radius:100%;
+                }
+            }
+
+            h4 {
+                font: bold 2rem/1em 'Poppins';
+                color: #fff;
+                text-transform: uppercase;
+                width: 90%;
+                position: relative;
+                z-index: 10;
+                @include transition(all ease 1s);
+                @extend %vertical-align;
+            }
+        }
+    }
+}

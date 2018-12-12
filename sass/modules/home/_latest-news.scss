@@ -1,0 +1,47 @@
+.latest-news {
+    .latest-news-carousel {
+        margin: 0 -10px;
+    }
+
+    .slick-list{
+        padding-bottom:30px;
+    }
+
+    .news-item {
+        padding: 0 10px;
+        @extend %box-sizing;
+    }
+
+    .news-inner-wrp {
+        @include box-shadow(0px 4px 10px 0px rgba(0,0,0,0.27));
+    }
+
+    .news-img {
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            @extend %object-fit-cover;
+        }
+    }
+
+    .news-content {
+        padding:20px;
+        @extend %box-sizing;
+        h3 {
+            font:bold #{(18rem / strip-unit($body-font-size))}/1em 'Roboto';
+            margin: 20px 0;
+        }
+
+        p {
+            display: block;
+            margin-bottom: 20px;
+            height: 3 * $p-line-height;
+            @include multi-line-fade;
+        }
+    }
+
+    .latest-news-nav{
+        position: relative;
+    }
+}

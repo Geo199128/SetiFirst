@@ -1,0 +1,56 @@
+@mixin transition($transition:all 0.3s) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+
+@mixin transition-delay($transition-delay...) {
+    -webkit-transition-delay: $transition-delay;
+    -moz-transition-delay: $transition-delay;
+    -ms-transition-delay: $transition-delay;
+    -o-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
+}
+
+@mixin animation($animation...){
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin transform-origin($transform-origin...) {
+    -webkit-transform-origin: $transform-origin;
+    -moz-transform-origin: $transform-origin;
+    -ms-transform-origin: $transform-origin;
+    -o-transform-origin: $transform-origin;
+    transform-origin: $transform-origin;
+}
+
+@mixin box-shadow($box-shadow...) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin multi-line-fade($bg-color:#fff,$line-height:$p-line-height){
+    &:after{
+        height: $line-height;
+        background: linear-gradient(to bottom, rgba($bg-color, 0), rgba($bg-color, 0.9) 90%);
+    }
+    @extend %multi-line-fade;
+}

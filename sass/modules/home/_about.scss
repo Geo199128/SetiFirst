@@ -1,0 +1,30 @@
+.home-about{
+    .about-content{
+        display:inline-block;
+        width:100%;
+    }
+
+    .about-info{
+        overflow:hidden;
+        width:calc(100% - 510px);
+        padding-right:50px;
+        @extend %box-sizing;
+        @extend %vertical-align;
+
+        p{
+            margin-bottom:15px;
+
+            &:last-of-type{
+                margin-bottom:30px;
+            }
+        }
+    }
+
+    .about-image{
+        width:500px;
+        height:500px;
+        border-radius:100%;
+        @extend %background-size-cover;
+        @extend %vertical-align;
+    }
+}
