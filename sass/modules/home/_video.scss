@@ -33,9 +33,9 @@
             z-index:10;
             @include animation(pulse 1s infinite);
 
-            &:hover{
-                animation-play-state: paused;
-            }
+            // &:hover{
+            //     animation-play-state: paused;
+            // }
         }
 
         span {

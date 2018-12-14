@@ -34,8 +34,8 @@ header {
             &,
             &:visited {
                 text-decoration: none;
-                font: normal $body-font-size 'Roboto';
-                @include transition(all 0.3s);
+                font: normal 16rem / strip-unit($body-font-size) 'Roboto';
+                @include transition;
             }
         }
 
@@ -90,7 +90,7 @@ header {
                 &,
                 &:visited {
                     color: #fff;
-                    line-height: $header-height;
+                    line-height: 60px;
                     height: 100%;
                     display: block;
                     opacity: 1;
@@ -99,7 +99,7 @@ header {
                 }
 
                 &:hover {
-                    opacity:0.7;
+                    background:$secondary-color;
                 }
             }
         }

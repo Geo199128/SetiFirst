@@ -1,62 +1,74 @@
-a.social-icon{
-    &,
-    &:visited {
-        display: block;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        line-height: 40px!important;
-        border-radius: 100%;
-        position: relative;
+.socials {
+    margin:0 -10px;
+    li{
+        float:left;
+        padding:0 10px;
+        @extend %box-sizing;
     }
+    a.social-icon {
 
-    &:before {
-        position: relative;
-        z-index: 10;
-    }
+        &,
+        &:visited {
+            display: block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px !important;
+            border-radius: 100%;
+            position: relative;
+            font-size: 20rem / strip-unit($body-font-size) !important;
+            text-decoration:none;
+            @include transition;
+        }
 
-    &.dark {
-        background: $primary-color;
-        color: #fff;
-    }
+        &:before {
+            position: relative;
+            z-index: 10;
+        }
 
-    &.light {
-        background: #fff;
-        color: $primary-color;
-
-        &:hover {
+        &.dark {
+            background: $primary-color;
             color: #fff;
         }
-    }
 
-    &.icon-facebook:hover {
-        background: $facebook-color;
-    }
+        &.light {
+            background: #fff;
+            color: $primary-color;
 
-    &.icon-twitter:hover {
-        background: $twitter-color;
-    }
+            &:hover {
+                color: #fff;
+            }
+        }
 
-    &.icon-instagram:hover {
-        background: 0;
-    }
+        &.icon-facebook:hover {
+            background: $facebook-color;
+        }
 
-    &.icon-instagram:after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        opacity: 0;
-        border-radius: 100%;
-        z-index: 0;
-        @extend %instagram-background;
-        @include transition(all 0.3s);
-    }
+        &.icon-twitter:hover {
+            background: $twitter-color;
+        }
 
-    &.icon-instagram:hover:after {
-        opacity: 1;
+        &.icon-instagram:hover {
+            background: 0;
+        }
+
+        &.icon-instagram:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+            border-radius: 100%;
+            z-index: 0;
+            @extend %instagram-background;
+            @include transition;
+        }
+
+        &.icon-instagram:hover:after {
+            opacity: 1;
+        }
     }
 }

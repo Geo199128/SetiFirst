@@ -5,8 +5,13 @@
         text-decoration: none;
         text-transform: uppercase;
         padding: 5px 20px;
+        cursor:pointer;
         @extend %box-sizing;
         @include transition();
+    }
+
+    &:hover,&:focus{
+        outline:0;
     }
 
     &.primary-btn{
