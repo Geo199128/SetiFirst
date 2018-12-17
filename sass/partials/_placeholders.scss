@@ -63,32 +63,44 @@
 
 %style-placeholder {
     &::-webkit-input-placeholder {
-        font:normal 1rem 'Roboto';
-        color:rgba(0,0,0,0.8);
+        font: normal 1rem 'Roboto';
+        color: rgba(0, 0, 0, 0.8);
     }
+
     &::-moz-placeholder {
-        font:normal 1rem 'Roboto';
-        color:rgba(0,0,0,0.8);
+        font: normal 1rem 'Roboto';
+        color: rgba(0, 0, 0, 0.8);
     }
+
     &::-ms-input-placeholder {
-        font:normal 1rem 'Roboto';
-        color:rgba(0,0,0,0.8);
+        font: normal 1rem 'Roboto';
+        color: rgba(0, 0, 0, 0.8);
     }
+
     &::-moz-placeholder {
-        font:normal 1rem 'Roboto';
-        color:rgba(0,0,0,0.8);
+        font: normal 1rem 'Roboto';
+        color: rgba(0, 0, 0, 0.8);
     }
 }
 
-%reset-fields-look{
-    appearance:none;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    border:0;
-    border-radius:0;
-    background:transparent;
-    padding:0;
-    margin:0;
+%reset-fields-look {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+%not-draggable {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 /*Social media*/

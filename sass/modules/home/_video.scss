@@ -1,12 +1,14 @@
 .home-video {
+    position:relative;
     @extend %screen-height;
     @extend %pseudo-vertical-align;
     @extend %background-size-cover;
 
     .container {
         text-align: left;
-        @extend %vertical-align;
         position: relative;
+        z-index:10;
+        @extend %vertical-align;
 
         &:before{
             content:'';
@@ -33,6 +35,12 @@
             z-index:10;
             @include animation(pulse 1s infinite);
 
+            &:before{
+                position:absolute;
+                left:0;
+                right:0;
+            }
+
             // &:hover{
             //     animation-play-state: paused;
             // }
@@ -43,6 +51,17 @@
             font: normal 1.28rem 'Roboto';
             text-transform:uppercase;
             color: #fff;
+            @extend %not-draggable;
         }
+    }
+
+    #home-video{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        /*opacity:0;
+        z-index:-1;*/
     }
 }
