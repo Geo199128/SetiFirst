@@ -1,0 +1,38 @@
+.inners-filter {
+    background: $secondary-color;
+    padding: 20px 0;
+    @extend %box-sizing;
+
+    .container {
+        &>* {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+
+    i {
+        color: #fff;
+        font-size: 20rem / strip-unit($body-font-size);
+        line-height: 38px;
+        float: left;
+    }
+
+    .filter-field {
+        background: #fff;
+    }
+
+    .select-field {
+        &:after {
+            right: 20px;
+        }
+    }
+
+    select,
+    input[type=text] {
+        height: 38px;
+        padding-right: 50px;
+        background: transparent;
+        position: relative;
+        z-index: 20;
+    }
+}

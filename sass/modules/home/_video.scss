@@ -1,21 +1,43 @@
 .home-video {
-    position:relative;
+    position: relative;
+    cursor:pointer;
     @extend %screen-height;
     @extend %pseudo-vertical-align;
     @extend %background-size-cover;
+    @extend %not-draggable;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        opacity: 0;
+        @include transition;
+    }
+
+    &.video-ready:after {
+        opacity: 1;
+    }
+
+    * {
+        @extend %not-draggable;
+    }
 
     .container {
         text-align: left;
         position: relative;
-        z-index:10;
+        z-index: 10;
         @extend %vertical-align;
 
-        &:before{
-            content:'';
-            display:block;
-            float:right;
+        &:before {
+            content: '';
+            display: block;
+            float: right;
             width:calc(100% - #{$video-button-width});
-            height:1px;
+            height: 1px;
             border-top: 1px dashed rgba(255, 255, 255, 0.5);
         }
 
@@ -31,14 +53,14 @@
             text-align: center;
             cursor: pointer;
             margin: ($video-button-width / -2) 0 20px;
-            position:relative;
-            z-index:10;
+            position: relative;
+            z-index: 10;
             @include animation(pulse 1s infinite);
 
-            &:before{
-                position:absolute;
-                left:0;
-                right:0;
+            &:before {
+                position: absolute;
+                left: 0;
+                right: 0;
             }
 
             // &:hover{
@@ -49,19 +71,17 @@
         span {
             display: block;
             font: normal 1.28rem 'Roboto';
-            text-transform:uppercase;
+            text-transform: uppercase;
             color: #fff;
-            @extend %not-draggable;
         }
     }
 
-    #home-video{
+    #home-video {
         position: absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        /*opacity:0;
-        z-index:-1;*/
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index:10;
     }
 }

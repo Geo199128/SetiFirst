@@ -1,3 +1,21 @@
+.select-field {
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 7px solid #000;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        @include transform(translateY(-50%));
+    }
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
@@ -12,9 +30,23 @@ textarea {
     font: normal 1rem 'Roboto';
     color: rgba(0, 0, 0, 0.8);
     @extend %box-sizing;
+
+    &:focus {
+        outline: 0;
+    }
 }
 
-textarea{
-    padding:20px;
-    height:200px;
+// select {
+//     option {
+//         @extend %reset-fields-look;
+
+//         &:hover {
+//             background-color: $primary-color;
+//         }
+//     }
+// }
+
+textarea {
+    padding: 20px;
+    height: 200px;
 }

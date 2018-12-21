@@ -1,22 +1,16 @@
 //Global variables
 var player; //home video player
 
-/*//Define Youtube parameters
-//This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-//This function creates an <iframe> (and YouTube player)
-//after the API code downloads.
-var onYouTubeIframeAPIReady = function(){
+// This
+// function creates an < iframe > (and YouTube player)
+// after the API code downloads.
+var onYouTubeIframeAPIReady = function () {
     player = new YT.Player('home-video', {
         height: '100%',
         width: '100%',
         videoId: 'mfxQy5A_tHs'
     });
-}*/
+}
 
 //Init carousels
 var InitCarousels = function () {
@@ -59,38 +53,54 @@ var InitParallax = function () {
 }
 
 //Get mouse coordinates when mouse down
-GetMouseDownCoordinates = function () {
-    var mouseDownX, mouseUpX, xDiff = 0,
+GetMouseDownCoordinates = function (element) {
+    var mouseDownX,
+        xDiff = 0,
         isMouseDown = false,
-        trackLength = $('.home-video').find('.container').outerWidth();
-    $('.home-video').on('mousedown', function (e) {
-        isMouseDown = true;
-        mouseDownX = e.pageX;
-    });
-
-    $(document).on('mouseup', function (e) {
+        trackLength = element.find('.container').outerWidth() - 70;
+    $(document).on('mousedown touchstart', function (e) {
+        var target = $(e.target);
+        if (target.closest('#' + element.attr('id')).length) {
+            isMouseDown = true;
+            mouseDownX = e.pageX;
+        }
+    }).on('mouseup touchend', function (e) {
         isMouseDown = false;
-        mouseUpX = e.pageX;
         if (xDiff < trackLength) {
-            $(this).find('i').animate({
+            element.find('i').animate({
                 'margin-left': 0
             }, 500);
-        }
-    });
+        } else {
+            var target = $(e.target);
+            if (target.closest('#' + element.attr('id')).length) {
+                element.addClass('video-ready').find('.container').fadeOut();
+                //Define Youtube parameters
+                // This code loads the IFrame Player API code asynchronously.
+                var tag = document.createElement('script');
 
-    $('.home-video').on('mousemove mouseover', function (e) {
-        xDiff = e.pageX - mouseDownX;
-        console.log(isMouseDown);
-        if (e.pageX > mouseDownX && xDiff <= trackLength && isMouseDown) {
-            $(this).find('i').css('margin-left', xDiff);
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            }
+        }
+    }).on('mousemove touchmove', function (e) {
+        var target = $(e.target);
+        if (target.closest('#' + element.attr('id')).length) {
+            if (e.pageX > mouseDownX && xDiff <= trackLength && isMouseDown) {
+                xDiff = e.pageX - mouseDownX;
+                element.find('i').css('margin-left', xDiff);
+            }
         }
     });
 }
 
 //Init home video
 var InitHomeVideo = function () {
-    //onYouTubeIframeAPIReady();
+    $('#home-video-section,#home-video-section *').attr('unselectable', 'on').attr('draggable', false);
+    GetMouseDownCoordinates($('#home-video-section'));
 }
+
+//Trim text
 
 $(document).ready(function () {
     InitCarousels();
@@ -98,6 +108,5 @@ $(document).ready(function () {
 
     if ($('#home-video').length) {
         InitHomeVideo();
-        GetMouseDownCoordinates();
     }
 });

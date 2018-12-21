@@ -7,108 +7,127 @@
 @import 'mixins';
 @import 'animations';
 
-html,body{
-    min-height:100vh;
-    font:normal 14px 'Roboto';
+html,
+body {
+    min-height: 100vh;
+    font: normal 14px 'Roboto';
 }
-body{
-    overflow-x:hidden;
 
-    main{
+body {
+    overflow-x: hidden;
+
+    main {
         min-height:calc(100vh - #{$header-height});
     }
 }
 
-.container{
-    width:calc(100% - 30px);
-    max-width:1170px;
-    margin:0 auto;
-    position:relative;
+.container {
+    width: calc(100% - 30px);
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
 }
 
-h2{
+h1{
+    font:900 #{$h1-font-size}/1em 'Poppins';
+    margin-bottom: $banner-title-margin;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+h2 {
     font:900 #{$h2-font-size}/1em 'Poppins';
     text-transform: uppercase;
-    color:#012349;
-    text-align:center;
-    margin-bottom:$title-margin;
+    color: #012349;
+    text-align: center;
+    margin-bottom: $title-margin;
 }
 
-h3{
+h3 {
     font:900 #{$h3-font-size}/1em 'Poppins';
-    color:#012349;
-    margin:15px 0 20px;
+    color: #012349;
+    margin: 15px 0 20px;
 }
 
-p{
+p {
     font:normal #{$body-font-size}/#{$p-line-height} 'Roboto';
-    color:#737373;
-    margin-bottom:15px;
+    color: #737373;
+    margin-bottom: 15px;
 }
 
-.section-margin{
-    padding:$section-padding 0;
+ul{
+    list-style:none;
+}
+
+.section-margin {
+    padding: $section-padding 0;
     @extend %box-sizing;
 }
 
-.full-width{
-    width:100%!important;
+.full-width {
+    width: 100% !important;
 }
 
-.carousel-nav{
-        position: absolute;
+.carousel-nav {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    left: 0;
+
+    a {
         display: inline-block;
-        width:100%;
-        text-align:center;
-        left:0;
+        width: 40px;
+        height: 40px;
+        background: $secondary-color !important;
+        border-radius: 100%;
+        overflow: hidden;
+        font-size: 25rem / strip-unit($body-font-size) !important;
+        position: relative;
+        color: #fff !important;
+        margin: 0 10px;
+        @include transition;
 
-        a {
-            display:inline-block;
-            width: 40px;
-            height: 40px;
-            background: $secondary-color !important;
-            border-radius: 100%;
-            overflow: hidden;
-            font-size: 35rem / strip-unit($body-font-size) !important;
-            position: relative;
-            color: #fff !important;
-            margin: 0 10px;
-
-            &.hero-prev {
-                @include transform(rotate(180deg));
-            }
-
-            i {
-                top: 50%;
-                line-height: 1rem;
-                position: absolute;
-                left: 0;
-                right: 0;
-                @include transform(translateY(-50%));
-            }
+        &:hover {
+            background: $primary-color !important;
         }
+
+        &.hero-prev {
+            @include transform(rotate(180deg));
+        }
+
+        i {
+            top: 50%;
+            line-height: 1em;
+            position: absolute;
+            left: 0;
+            right: 0;
+            @include transform(translateY(-50%));
+        }
+    }
 }
 
-.background-title{
-    position:relative;
-    overflow:hidden;
+.background-title {
+    position: relative;
+    overflow: hidden;
 
-    &:before{
-        content:attr(data-title);
-        display:block;
-        position:absolute;
-        top:35%;
-        text-transform:uppercase;
-        font:900 (170rem / strip-unit($body-font-size)) 'Poppins';
-        opacity:0.09;
-        white-space:nowrap;
+    &:before {
+        content: attr(data-title);
+        display: block;
+        position: absolute;
+        top: 35%;
+        text-transform: uppercase;
+        font: 900 (170rem / strip-unit($body-font-size)) 'Poppins';
+        opacity: 0.09;
+        white-space: nowrap;
     }
 
-    &.left-background-title:before{
+    &.left-background-title:before {
         //@include transform(translateY(-50%) translateX(-30%));
         @include animation(slide-to-right linear 150s infinite);
     }
-    &.right-background-title:before{
+
+    &.right-background-title:before {
         //@include transform(translateY(-50%) translateX(70%));
         @include animation(slide-to-left linear 150s infinite);
     }

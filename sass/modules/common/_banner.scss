@@ -1,0 +1,57 @@
+.inners-banner {
+    height:calc(50vh - #{$header-height});
+    min-height:calc(300px - #{$header-height});
+    position: relative;
+    @extend %pseudo-vertical-align;
+    @extend %background-size-cover;
+
+    &:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background:$primary-color;
+        opacity:0.35;
+    }
+
+    .container {
+        text-align: left;
+        z-index: 20;
+        @extend %vertical-align;
+        z-index:10;
+    }
+
+    .breadcrumb {
+        font: bold 16rem / strip-unit($body-font-size) 'Poppins';
+        text-transform: uppercase;
+
+        *{
+            display:inline-block;
+            margin-right:5px;
+        }
+
+        &,
+        a,
+        a:visited {
+            color: #fff;
+        }
+
+        a {
+
+            &,
+            &:visited {
+                text-decoration: none;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        .current-node{
+            color:$secondary-color;
+        }
+    }
+}
