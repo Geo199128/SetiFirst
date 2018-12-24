@@ -1,6 +1,5 @@
 .select-field {
     position: relative;
-
     &:after {
         content: '';
         display: block;
@@ -27,7 +26,7 @@ textarea {
     background: #fff;
     width: 100%;
     padding: 0 20px;
-    font: normal 1rem 'Roboto';
+    font: normal 1.1rem 'Roboto';
     color: rgba(0, 0, 0, 0.8);
     @extend %box-sizing;
 
@@ -45,6 +44,10 @@ textarea {
 //         }
 //     }
 // }
+
+select{
+    cursor:pointer;
+}
 
 textarea {
     padding: 20px;
