@@ -16,6 +16,10 @@ body {
 body {
     overflow-x: hidden;
 
+    &.unscrollable{
+        overflow:hidden;
+    }
+
     main {
         min-height:calc(100vh - #{$header-height});
     }

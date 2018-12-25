@@ -102,11 +102,43 @@ var InitHomeVideo = function () {
 
 //Trim text
 
+//Init popup
+var InitPopup = function(){
+    var popup = $('.popup');
+    $('body').addClass('unscrollable');
+    popup.fadeIn(300);
+    popup.find('.popup-close-btn').off().on('click',function(){
+        popup.fadeOut(300);
+        setTimeout(function(){
+            $('body').removeClass('unscrollable');
+        }, 300);
+    });
+}
+
+//Change map location
+var GenerateMap = function(locationLong,locationLat){
+    console.log(locationLat,locationLong)
+    if($('#map').length){
+        var iframe = '<iframe src="https://maps.google.com/maps?q='+locationLat+','+locationLong+'&hl=en&z=12&amp;output=embed" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>';
+        $('#map').html(iframe);
+        
+    }
+}
+
 $(document).ready(function () {
     InitCarousels();
     InitParallax();
 
     if ($('#home-video').length) {
         InitHomeVideo();
+    }
+
+    if($('.view-map-btn').length){
+        $('.view-map-btn').on('click',function(){
+            var long = $(this).data('long');
+            var lat = $(this).data('lat');
+            GenerateMap(long,lat);
+            InitPopup();
+        });
     }
 });

@@ -18,45 +18,43 @@
 
 <body>
     <div class="popup">
-        <div id="map" style="width:80vw;height:80vh">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d55251.3143470273!2d31.22328256519738!3d30.059596252859127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1545585654978"
+        <a href="javascript:void(0);" title="Close" class="popup-close-btn">X</a>
+        <div id="map">
+            <iframe src="https://maps.google.com/maps?q=31.22328256519738,30.059596252859127&hl=en&z=12&amp;output=embed"
                 width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
-        <a href="javascript:void(0);" on-click="changemap()">Map 1</a>
-        <a href="javascript:void(0);" on-click="changemap()">Map 2</a>
-        <a href="javascript:void(0);" on-click="changemap()">Map 3</a>
     </div>
     <header>
         <div class="container">
-            <a href="#" title="#" class="logo">
+            <a href="index.html" title="Home" class="logo">
                 <img src="/images/setiFirstLogo.png" alt="Seti First logo" />
             </a>
             <nav class="top-nav">
                 <ul class="main-menu">
                     <li>
-                        <a href="#" title="#" class="active">Home</a>
+                        <a href="#" title="Home" class="active">Home</a>
                     </li>
                     <li>
-                        <a href="#" title="#">About Us</a>
+                        <a href="#" title="About Us">About Us</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Contact Us</a>
+                        <a href="#" title="Contact Us">Contact Us</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Visit Dirham Tours in Dubai</a>
+                        <a href="#" title="Visit Dirham Tours in Dubai">Visit Dirham Tours in Dubai</a>
                     </li>
                 </ul>
                 <ul class="socials">
                     <li>
-                        <a href="#" title="#" class="social-icon dark icon-facebook">
+                        <a href="#" title="Facebook" class="social-icon dark icon-facebook">
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="#" class="social-icon dark icon-twitter">
+                        <a href="#" title="Twitter" class="social-icon dark icon-twitter">
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="#" class="social-icon dark icon-instagram">
+                        <a href="#" title="Instagram" class="social-icon dark icon-instagram">
                         </a>
                     </li>
                 </ul>
@@ -64,22 +62,22 @@
             <nav class="bottom-nav">
                 <ul class="explore-menu">
                     <li>
-                        <a href="#" title="#">Flights</a>
+                        <a href="#" title="Flights">Flights</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Cruises</a>
+                        <a href="item-listing.html" title="Cruises">Cruises</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Hotels</a>
+                        <a href="item-listing.html" title="Hotels">Hotels</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Programs</a>
+                        <a href="item-listing.html" title="Programs">Programs</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Transport</a>
+                        <a href="item-listing.html" title="Transport">Transport</a>
                     </li>
                     <li>
-                        <a href="#" title="#">Excursions</a>
+                        <a href="item-listing.html" title="Excursions">Excursions</a>
                     </li>
                 </ul>
             </nav>
@@ -136,7 +134,8 @@
                             <div class="listing-info">
                                 <div class="listing-location">
                                     <i class="icon-map-pin"></i>
-                                    <a href="javascript:void(0);" title="Katamya, Cairo" data-lang="" data-lat="">Katamya,
+                                    <a href="javascript:void(0);" title="Katamya, Cairo" class="view-map-btn" data-long="31.22328256519738"
+                                        data-lat="30.059596252859127">Katamya,
                                         Cairo</a>
                                 </div>
                                 <div class="listing-stars">
@@ -162,7 +161,8 @@
                             <div class="listing-info">
                                 <div class="listing-location">
                                     <i class="icon-map-pin"></i>
-                                    <a href="javascript:void(0);" title="Downtown, Cairo" data-lang="" data-lat="">Downtown,
+                                    <a href="javascript:void(0);" title="Downtown, Cairo" class="view-map-btn"
+                                        data-long="31.22328256519738" data-lat="30.059596252859127">Downtown,
                                         Cairo</a>
                                 </div>
                                 <div class="listing-stars">
@@ -188,7 +188,8 @@
                             <div class="listing-info">
                                 <div class="listing-location">
                                     <i class="icon-map-pin"></i>
-                                    <a href="javascript:void(0);" title="Katamya, Cairo" data-lang="" data-lat="">Katamya,
+                                    <a href="javascript:void(0);" title="Katamya, Cairo" class="view-map-btn" data-long="31.22328256519738"
+                                        data-lat="30.059596252859127">Katamya,
                                         Cairo</a>
                                 </div>
                                 <div class="listing-stars">
@@ -214,7 +215,8 @@
                             <div class="listing-info">
                                 <div class="listing-location">
                                     <i class="icon-map-pin"></i>
-                                    <a href="javascript:void(0);" title="Aswan" data-lang="" data-lat="">Aswan</a>
+                                    <a href="javascript:void(0);" title="Aswan" class="view-map-btn" data-long="32.899830"
+                                        data-lat="24.088938">Aswan</a>
                                 </div>
                                 <div class="listing-stars">
                                     <i class="icon-star"></i>

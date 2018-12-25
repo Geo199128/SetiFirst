@@ -1,0 +1,24 @@
+.popup{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.8);
+    z-index:110;
+    display:none;
+
+    .popup-close-btn{
+        color: #fff;
+        font: 900 1.5rem'Poppins';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-decoration: none;
+    }
+    
+    #map{
+        width:80vw;
+        height:80vh;
+        margin:0 auto;
+        margin-top:10vh;
+    }
+}
