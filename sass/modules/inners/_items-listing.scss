@@ -10,6 +10,14 @@
     margin-bottom: 20px;
     @extend %box-sizing;
 
+    &:nth-child(3n-2){
+        clear:left;
+    }
+
+    &:nth-child(3n){
+        clear:right;
+    }
+
     a,a:visited{
         text-decoration:none;
     }
