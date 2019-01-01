@@ -1,3 +1,38 @@
+//Function to include html files
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        elmnt.innerHTML = this.responseText;
+                    }
+                    if (this.status == 404) {
+                        elmnt.innerHTML = "Page not found.";
+                    }
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("w3-include-html");
+                    includeHTML();
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+        }
+    }
+}
+
+includeHTML();
+
 //Global variables
 var player; //home video player
 
@@ -60,7 +95,7 @@ GetMouseDownCoordinates = function (element) {
         trackLength = element.find('.container').outerWidth() - 70;
     $(document).on('mousedown touchstart', function (e) {
         var target = $(e.target);
-        if (target.closest('#' + element.attr('id')).length) {
+        if (target.closest('#' + element.attr('id')).length && !target.hasClass('setifirst-top-btn')) {
             isMouseDown = true;
             mouseDownX = e.pageX;
         }
@@ -72,7 +107,7 @@ GetMouseDownCoordinates = function (element) {
             }, 500);
         } else {
             var target = $(e.target);
-            if (target.closest('#' + element.attr('id')).length) {
+            if (target.closest('#' + element.attr('id')).length && !target.hasClass('setifirst-top-btn')) {
                 element.addClass('video-ready').find('.container').fadeOut();
                 //Define Youtube parameters
                 // This code loads the IFrame Player API code asynchronously.
@@ -85,7 +120,7 @@ GetMouseDownCoordinates = function (element) {
         }
     }).on('mousemove touchmove', function (e) {
         var target = $(e.target);
-        if (target.closest('#' + element.attr('id')).length) {
+        if (target.closest('#' + element.attr('id')).length && !target.hasClass('setifirst-top-btn')) {
             if (e.pageX > mouseDownX && xDiff <= trackLength && isMouseDown) {
                 xDiff = e.pageX - mouseDownX;
                 element.find('i').css('margin-left', xDiff);
@@ -103,25 +138,25 @@ var InitHomeVideo = function () {
 //Trim text
 
 //Init popup
-var InitPopup = function(){
+var InitPopup = function () {
     var popup = $('.popup');
     $('body').addClass('unscrollable');
     popup.fadeIn(300);
-    popup.find('.popup-close-btn').off().on('click',function(){
+    popup.find('.popup-close-btn').off().on('click', function () {
         popup.fadeOut(300);
-        setTimeout(function(){
+        setTimeout(function () {
             $('body').removeClass('unscrollable');
         }, 300);
     });
 }
 
 //Change map location
-var GenerateMap = function(locationLong,locationLat){
-    console.log(locationLat,locationLong)
-    if($('#map').length){
-        var iframe = '<iframe src="https://maps.google.com/maps?q='+locationLat+','+locationLong+'&hl=en&z=12&amp;output=embed" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>';
+var GenerateMap = function (locationLong, locationLat) {
+    console.log(locationLat, locationLong)
+    if ($('#map').length) {
+        var iframe = '<iframe src="https://maps.google.com/maps?q=' + locationLat + ',' + locationLong + '&hl=en&z=12&amp;output=embed" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>';
         $('#map').html(iframe);
-        
+
     }
 }
 
@@ -133,12 +168,22 @@ $(document).ready(function () {
         InitHomeVideo();
     }
 
-    if($('.view-map-btn').length){
-        $('.view-map-btn').on('click',function(){
+    if ($('.view-map-btn').length) {
+        $('.view-map-btn').on('click', function () {
             var long = $(this).data('long');
             var lat = $(this).data('lat');
-            GenerateMap(long,lat);
+            GenerateMap(long, lat);
             InitPopup();
         });
     }
+
+    if ($('.setifirst-top-btn').length) {
+        $('.setifirst-top-btn').on('click', function (e) {
+            $('html,body').animate({
+                scrollTop: 0
+            }, 'slow');
+            return false;
+        });
+    }
 });
+

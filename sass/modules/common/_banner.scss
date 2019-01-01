@@ -1,5 +1,5 @@
 .inners-banner {
-    height:calc(50vh - #{$header-height});
+    height:calc(60vh - #{$header-height});
     min-height:calc(300px - #{$header-height});
     position: relative;
     @extend %pseudo-vertical-align;

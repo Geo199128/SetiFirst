@@ -1,17 +1,4 @@
-@import 'common/header';
 
-@import 'common/other-items';
-@import 'common/forms';
-
-@import 'home/hero-carousel';
-@import 'home/explore';
-@import 'home/about';
-@import 'home/video';
-@import 'home/latest-news';
-@import 'home/contact';
-
-@import 'common/banner';
-@import 'inners/items-listing';
-@import 'inners/listing-landing';
-
-@import 'common/footer';
+@import 'common/all';
+@import 'home/all';
+@import 'inners/all';

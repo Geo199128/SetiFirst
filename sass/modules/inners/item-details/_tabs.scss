@@ -1,0 +1,30 @@
+.details-tabs {
+    @include transform(translateY(-100%));
+
+    ul {
+        overflow: hidden;
+        margin: 0 -10px;
+    }
+
+    li {
+        float: left;
+    }
+
+    a {
+        font: normal 1.142rem/1em 'Poppins';
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        @include transition;
+
+        &,
+        &:visited {
+            color: #fff;
+        }
+
+        &:hover,&.active {
+            background: $secondary-color;
+        }
+    }
+}
