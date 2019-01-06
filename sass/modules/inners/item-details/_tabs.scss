@@ -1,30 +1,39 @@
-.details-tabs {
-    @include transform(translateY(-100%));
+.details-tabs-section {
+    position: relative;
 
-    ul {
-        overflow: hidden;
-        margin: 0 -10px;
-    }
+    .details-tabs {
+        position: absolute;
+        left: 0;
+        right: 0;
+        @include transform(translateY(-100%));
 
-    li {
-        float: left;
-    }
-
-    a {
-        font: normal 1.142rem/1em 'Poppins';
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        padding: 15px;
-        @include transition;
-
-        &,
-        &:visited {
-            color: #fff;
+        ul {
+            overflow: hidden;
+            margin: 0 -10px;
         }
 
-        &:hover,&.active {
-            background: $secondary-color;
+        li {
+            float: left;
+        }
+
+        a {
+            font: normal 1.142rem/1em 'Poppins';
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            @include transition;
+
+            &,
+            &:visited {
+                color: #fff;
+            }
+
+            &:hover,
+            &.active {
+                background: $secondary-color;
+            }
+
         }
     }
 }

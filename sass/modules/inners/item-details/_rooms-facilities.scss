@@ -1,0 +1,50 @@
+.details-rooms-facilities {
+    background: $primary-color;
+
+    &:before {
+        color: #fff;
+    }
+
+    .facilities-container {
+        display: inline-block;
+
+        h3 {
+            font:900 $h3-font-size 'Poppins';
+            color:#fff;
+            float: left;
+            margin:0;
+            text-transform: uppercase;
+            padding-bottom:5px;
+            //border-bottom:3px solid #fff;
+            margin-right:10px;
+            writing-mode: vertical-rl;
+            // @include transform(rotate(-90deg) translateY(-50%));
+            // @include transform-origin(bottom);
+        }
+
+        ul{
+            overflow:hidden;
+            border-left:3px solid #fff;
+            padding-left:10px;
+            @extend %box-sizing;
+
+            li{
+                height:70px;
+                width:70px;
+                float:left;
+                margin-right:10px;
+                border-radius:100%;
+                overflow:hidden;
+                
+                svg{
+                    display: block;
+                    fill:#fff;
+                    height:65%;
+                    width:65%;
+                    margin:50% auto 0;
+                    @include transform(translateY(-50%));
+                }
+            }
+        }
+    }
+}

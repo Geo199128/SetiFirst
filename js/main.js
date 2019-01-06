@@ -1,4 +1,4 @@
-//Function to include html files
+//Function to include html and svg icons in details facilities files
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */
@@ -51,8 +51,10 @@ var onYouTubeIframeAPIReady = function () {
 var InitCarousels = function () {
     var heroCarousel = $('.hero-carousel'),
         heroList = heroCarousel.find('.hero-list'),
-        newsSectionContainer = $('.latest-news .container');
-    latestNewsCarousel = $('.latest-news-carousel');
+        newsSectionContainer = $('.latest-news .container'),
+        latestNewsCarousel = $('.latest-news-carousel'),
+        detailsGalleryCarousel = $('.gallery-carousel'),
+        detailsGalleryContainer = $('.gallery-container');
     if (heroList.length) {
         heroList.slick({
             infinite: true,
@@ -72,9 +74,27 @@ var InitCarousels = function () {
             slidesToShow: 3,
             slidesToScroll: 1,
             arrows: true,
-            prevArrow: newsSectionContainer.find('.hero-prev'),
-            nextArrow: newsSectionContainer.find('.hero-next'),
+            prevArrow: newsSectionContainer.find('.news-prev'),
+            nextArrow: newsSectionContainer.find('.news-next'),
             infinite: false
+        });
+    }
+
+    if (detailsGalleryCarousel.length) {
+        detailsGalleryCarousel.slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 500,
+            arrows: true,
+            prevArrow: detailsGalleryContainer.find('.gallery-prev'),
+            nextArrow: detailsGalleryContainer.find('.gallery-next'),
+            fade: true,
+            dots: true,
+            customPaging : function(slider, i) {
+                return '<a href="javascript:void(0);" style="background:#000 url(\''+$(slider.$slides[i]).attr('data-dot-image')+'\') 50% / cover no-repeat"></a>';
+            },
+            cssEase: 'linear'
         });
     }
 }
@@ -186,4 +206,3 @@ $(document).ready(function () {
         });
     }
 });
-

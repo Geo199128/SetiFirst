@@ -96,7 +96,7 @@ ul{
             background: $primary-color !important;
         }
 
-        &.hero-prev {
+        &.nav-prev {
             @include transform(rotate(180deg));
         }
 

@@ -1,6 +1,7 @@
 .inners-banner {
-    height:calc(60vh - #{$header-height});
-    min-height:calc(300px - #{$header-height});
+    height:360px;
+    // height:calc(60vh - #{$header-height});
+    // min-height:calc(300px - #{$header-height});
     position: relative;
     @extend %pseudo-vertical-align;
     @extend %background-size-cover;

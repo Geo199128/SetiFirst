@@ -20,7 +20,7 @@
     <div class="popup">
         <a href="javascript:void(0);" title="Close" class="popup-close-btn">X</a>
         <div id="map">
-            
+
         </div>
     </div>
     <div w3-include-html="common/header.html"></div>
@@ -37,33 +37,96 @@
                 </div>
             </div>
         </section>
-        <section class="details-tabs">
-            <div class="container">
-            <ul>
-                <li>
-                    <a href="#gallery" title="Go to Gallery" class="active">Gallery</a>
-                </li>
-                <li>
-                    <a href="#overview" title="Go to Overview">Overview</a>
-                </li>
-                <li>
-                    <a href="#rooms-and-facitlties" title="Go to Rooms and facilities">Rooms / Facilities</a>
-                </li>
-                <li>
-                    <a href="#itinerary" title="Go to itinerary">Itinerary</a>
-                </li>
-                <li>
-                    <a href="#deck-plans" title="Go to deck plans">Deck plans</a>
-                </li>
-            </ul>
-        </div>
+        <section class="details-tabs-section">
+            <div class="details-tabs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#gallery" title="Go to Gallery" class="active">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#overview" title="Go to Overview">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#rooms-and-facitlties" title="Go to Rooms and facilities">Rooms / Facilities</a>
+                        </li>
+                        <li>
+                            <a href="#itinerary" title="Go to itinerary">Itinerary</a>
+                        </li>
+                        <li>
+                            <a href="#deck-plans" title="Go to deck plans">Deck plans</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
-        <section class="details-gallery">
+        <section id="gallery" class="details-gallery section-margin">
             <div class="container">
                 <div class="gallery-container">
-                    <div class="gallery-item">
-                        
+                    <div class="gallery-carousel">
+                        <div class="gallery-item" data-dot-image="../images/details/2018-07-06 (1).jpg" style="background:#000 url('../images/details/2018-07-06 (1).jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-07-06.jpg" style="background:#000 url('../images/details/2018-07-06.jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-09-21 (1).jpg" style="background:#000 url('../images/details/2018-09-21 (1).jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-09-21 (2).jpg" style="background:#000 url('../images/details/2018-09-21 (2).jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-09-21 (3).jpg" style="background:#000 url('../images/details/2018-09-21 (3).jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-09-21.jpg" style="background:#000 url('../images/details/2018-09-21.jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-11-09.jpg" style="background:#000 url('../images/details/2018-11-09.jpg') 50% / cover no-repeat"></div>
+                        <div class="gallery-item" data-dot-image="../images/details/2018-12-31.jpg" style="background:#000 url('../images/details/2018-12-31.jpg') 50% / cover no-repeat"></div>
                     </div>
+                    <div class="carousel-nav gallery-nav">
+                        <a href="javascript:void(0);" title="Previous" class="gallery-prev nav-prev">
+                            <i class="icon-right-arrow"></i>
+                        </a>
+                        <a href="javascript:void(0);" title="Next" class="gallery-next nav-next">
+                            <i class="icon-right-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="overview" class="details-overview background-title right-background-title" data-title="Overview">
+            <div class="container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros turpis, fermentum quis orci
+                    sit amet, finibus vulputate mi. Maecenas faucibus tellus vel fermentum vulputate. Nunc feugiat
+                    tempor nisl. Duis dapibus consectetur ex vel ultricies. Pellentesque pulvinar lacinia ligula.
+                    Phasellus nec lectus id augue gravida pharetra. Nullam pretium mi a laoreet volutpat. Donec
+                    accumsan posuere eleifend. Curabitur sollicitudin, felis ac pellentesque imperdiet, lacus turpis
+                    molestie tortor, id vestibulum justo velit eu purus.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi
+                    porttitor mi id porta egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                    per inceptos himenaeos. Praesent cursus augue leo, non tristique neque cursus et. Cras at
+                    consectetur dui, sit amet pellentesque tellus. Nam lobortis pellentesque velit, sit amet suscipit
+                    risus sollicitudin nec. Curabitur vitae sapien cursus, mattis metus eget, sodales felis. Vivamus
+                    tempus tortor nulla, non rutrum velit eleifend eu. Pellentesque efficitur, justo in eleifend
+                    lacinia, augue diam euismod libero, eu tempor turpis turpis non risus. Vestibulum nec tincidunt
+                    tellus. Duis quis lorem id ex accumsan auctor non sit amet dolor. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam in nunc porta, fringilla lacus id, vehicula tellus.</p>
+                <p>Aenean faucibus in ante non consectetur. Integer sed rhoncus sem, vel faucibus odio. Nullam vitae
+                    suscipit massa. Maecenas ultrices nulla est, id tristique nisl consequat nec. Quisque ut eros sit
+                    amet nulla fermentum pharetra. Aliquam commodo, sapien sed commodo tempor, quam velit varius est,
+                    vestibulum gravida leo tellus at ligula. Nam ut risus sit amet magna vehicula rutrum a euismod
+                    risus. Duis pellentesque ligula egestas dui varius cursus. Suspendisse elit magna, fermentum quis
+                    aliquam sed, pharetra lobortis neque. Duis leo ipsum, tristique a tristique eu, posuere sit amet
+                    turpis. Vivamus ornare rutrum accumsan. Vivamus elementum, augue eu pretium eleifend, lacus justo
+                    sodales turpis, non feugiat </p>
+            </div>
+        </section>
+        <section id="rooms-and-facitlties" class="details-rooms-facilities section-margin background-title left-background-title"
+            data-title="Rooms/facilities">
+            <div class="container">
+                <div class="facilities-container">
+                    <h3>Facilities</h3>
+                    <ul>
+                        <li w3-include-html="../icons/cards.svg" data-title="Casino"></li>
+                        <li w3-include-html="../icons/cards.svg" data-title="Casino"></li>
+                        <li w3-include-html="../icons/cards.svg" data-title="Casino"></li>
+                        <li w3-include-html="../icons/cards.svg" data-title="Casino"></li>
+                        <li w3-include-html="../icons/cards.svg" data-title="Casino"></li>
+                        <li w3-include-html="../icons/cards.svg" data-title="Casino"></li>
+                    </ul>
+                </div>
+                <div class="rooms-container">
+
                 </div>
             </div>
         </section>
