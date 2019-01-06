@@ -14,6 +14,7 @@ function includeHTML() {
                 if (this.readyState == 4) {
                     if (this.status == 200) {
                         elmnt.innerHTML = this.responseText;
+                        elmnt.innerHTML
                     }
                     if (this.status == 404) {
                         elmnt.innerHTML = "Page not found.";
@@ -25,6 +26,8 @@ function includeHTML() {
             }
             xhttp.open("GET", file, true);
             xhttp.send();
+
+            $(document).find('svg').find('*').removeAttr('style');
             /* Exit the function: */
             return;
         }

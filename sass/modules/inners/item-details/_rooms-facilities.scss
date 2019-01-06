@@ -7,42 +7,135 @@
 
     .facilities-container {
         display: inline-block;
+        width: 100%;
+        margin-bottom:50px;
 
         h3 {
-            font:900 $h3-font-size 'Poppins';
-            color:#fff;
-            float: left;
-            margin:0;
+            font: 900 $h3-font-size 'Poppins';
+            color: #fff;
+            margin: 0;
             text-transform: uppercase;
-            padding-bottom:5px;
+            padding-bottom: 5px;
             //border-bottom:3px solid #fff;
-            margin-right:10px;
+            margin-right: 10px;
             writing-mode: vertical-rl;
+            @extend %vertical-align;
             // @include transform(rotate(-90deg) translateY(-50%));
             // @include transform-origin(bottom);
         }
 
-        ul{
-            overflow:hidden;
-            border-left:3px solid #fff;
-            padding-left:10px;
+        ul {
+            max-width: calc(100% - 50px);
+            border-left: 3px solid #fff;
+            padding-left: 10px;
             @extend %box-sizing;
+            @extend %vertical-align;
 
-            li{
-                height:70px;
-                width:70px;
-                float:left;
-                margin-right:10px;
-                border-radius:100%;
-                overflow:hidden;
-                
-                svg{
+            li {
+                height: 70px;
+                width: 70px;
+                float: left;
+                margin-right: 10px;
+                border-radius: 100%;
+                cursor: pointer;
+                position: relative;
+                @include transition;
+
+                &:before {
+                    content: attr(data-title);
                     display: block;
-                    fill:#fff;
-                    height:65%;
-                    width:65%;
-                    margin:50% auto 0;
+                    white-space: nowrap;
+                    position: absolute;
+                    top: 100%;
+                    left: 25%;
+                    background: $secondary-color;
+                    color: $primary-color;
+                    opacity: 0;
+                    border-radius: 40px;
+                    font-weight: bold;
+                    font-size: 16rem / strip-unit($body-font-size);
+                    padding: 2px 10px;
                     @include transform(translateY(-50%));
+                    @include transition;
+                    @extend %box-sizing;
+                }
+
+                svg {
+                    display: block;
+                    height: 65%;
+                    width: 65%;
+                    margin: 50% auto 0;
+                    fill: #fff;
+                    @include transition;
+                    @include transform(translateY(-50%));
+                }
+
+                &:hover {
+                    background: #fff;
+
+                    &:before {
+                        opacity: 1;
+                        left: 50%;
+                    }
+
+                    svg {
+                        fill: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .rooms-container {
+        .room-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .room-type {
+                background: $secondary-color;
+                border-radius: 100%;
+                width: 135px;
+                height: 135px;
+                font: 900 20rem / strip-unit($body-font-size) 'Poppins';
+                color: $primary-color;
+                text-transform: uppercase;
+                @extend %box-sizing;
+                @extend %pseudo-vertical-align;
+                @extend %vertical-align;
+
+                span {
+                    line-height: 1em;
+                    width: 90%;
+                    @extend %vertical-align;
+                }
+            }
+
+            .room-info {
+                width: calc(100% - 150px);
+                color: #fff;
+                padding-left: 20px;
+                @extend %box-sizing;
+                @extend %vertical-align;
+
+
+
+                span {
+                    display: block;
+                    margin-bottom: 5px;
+
+                    &.room-notice {
+                        font-weight: bold;
+                    }
+
+                    i,
+                    &.room-notice {
+                        color: $secondary-color;
+                    }
                 }
             }
         }
