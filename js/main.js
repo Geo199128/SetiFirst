@@ -57,7 +57,9 @@ var InitCarousels = function () {
         newsSectionContainer = $('.latest-news .container'),
         latestNewsCarousel = $('.latest-news-carousel'),
         detailsGalleryCarousel = $('.gallery-carousel'),
-        detailsGalleryContainer = $('.gallery-container');
+        detailsGalleryContainer = $('.gallery-container'),
+        cruiseItineraryCarousel = $('.cruise-itinerary-carousel'),
+        cruiseItineraryContainer = $('.cruise-itinerary-container');
     if (heroList.length) {
         heroList.slick({
             infinite: true,
@@ -98,6 +100,17 @@ var InitCarousels = function () {
                 return '<a href="javascript:void(0);" style="background:#000 url(\''+$(slider.$slides[i]).attr('data-dot-image')+'\') 50% / cover no-repeat"></a>';
             },
             cssEase: 'linear'
+        });
+    }
+
+    if (cruiseItineraryCarousel.length) {
+        cruiseItineraryCarousel.slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: cruiseItineraryContainer.find('.cruise-itinerary-prev'),
+            nextArrow: cruiseItineraryContainer.find('.cruise-itinerary-next'),
+            infinite: false
         });
     }
 }

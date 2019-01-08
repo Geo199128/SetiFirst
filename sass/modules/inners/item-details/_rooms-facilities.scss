@@ -20,7 +20,7 @@
             margin-right: 10px;
             writing-mode: vertical-rl;
             @extend %vertical-align;
-            // @include transform(rotate(-90deg) translateY(-50%));
+            @include transform(rotate(-180deg));
             // @include transform-origin(bottom);
         }
 

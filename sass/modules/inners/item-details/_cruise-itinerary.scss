@@ -1,0 +1,69 @@
+.details-cruise-itinerary {
+    background: $secondary-color;
+
+    .cruise-itinerary-container {
+        margin: 0 -10px;
+        position: relative;
+
+        .cruise-itinerary-item {
+            padding: 0 10px;
+            @extend %box-sizing;
+
+            .cruise-itinerary-info {
+                padding: 50px 20px;
+                border: 3px solid $primary-color;
+                text-align: center;
+                color: $primary-color;
+                @extend %box-sizing;
+
+                span {
+                    display: block;
+
+                    &.nights {
+                        font:900 #{72rem / strip-unit($body-font-size)}/1em 'Roboto';
+                    }
+
+                    &.label {
+                        font:900 #{24rem / strip-unit($body-font-size)}/1em 'Poppins';
+                        padding: 20px 30px;
+                        border-bottom: 3px solid $primary-color;
+                        display: inline-block;
+                        margin-bottom: 20px;
+                        text-transform: uppercase;
+                        @extend %box-sizing;
+                    }
+
+                    &.date {
+                        font:Normal #{14rem / strip-unit($body-font-size)}/1.2em 'Roboto';
+                        margin-bottom: 10px;
+                    }
+
+                    &.sailing-date {
+                        font:Normal #{14rem / strip-unit($body-font-size)}/1.2em 'Roboto';
+                        display: inline-block;
+                        color: #fff;
+                        background: $primary-color;
+                        padding: 7px 10px;
+                        @extend %box-sizing;
+                    }
+                }
+            }
+        }
+
+        .cruise-itinerary-nav {
+            position: static;
+            display: block;
+
+            a {
+                background:$primary-color!important;
+                border:2px solid $primary-color;
+                margin-top:20px;
+
+                &:hover{
+                    background:transparent!important;
+                    color:$primary-color!important;
+                }
+            }
+        }
+    }
+}

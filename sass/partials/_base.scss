@@ -104,8 +104,7 @@ ul{
             top: 50%;
             line-height: 1em;
             position: absolute;
-            left: 0;
-            right: 0;
+            left: 22%;
             @include transform(translateY(-50%));
         }
     }
