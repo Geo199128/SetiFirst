@@ -1,0 +1,25 @@
+.details-deck-plans {
+    .deck-plans-container {
+        margin: 0 -10px;
+        position: relative;
+
+        .deck-plans-item {
+            height: 220px;
+            padding: 0 5px;
+            @extend %box-sizing;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .deck-plans-nav {
+        position: static;
+        display: block;
+
+        a {
+            margin-top:20px;
+        }
+    }
+}

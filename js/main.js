@@ -37,6 +37,7 @@ function includeHTML() {
 includeHTML();
 
 //Global variables
+$window = $(window);
 var player; //home video player
 
 // This
@@ -59,7 +60,9 @@ var InitCarousels = function () {
         detailsGalleryCarousel = $('.gallery-carousel'),
         detailsGalleryContainer = $('.gallery-container'),
         cruiseItineraryCarousel = $('.cruise-itinerary-carousel'),
-        cruiseItineraryContainer = $('.cruise-itinerary-container');
+        cruiseItineraryContainer = $('.cruise-itinerary-container'),
+        deckPlansCarousel = $('.deck-plans-carousel'),
+        deckPlansContainer = $('.deck-plans-container');
     if (heroList.length) {
         heroList.slick({
             infinite: true,
@@ -96,8 +99,8 @@ var InitCarousels = function () {
             nextArrow: detailsGalleryContainer.find('.gallery-next'),
             fade: true,
             dots: true,
-            customPaging : function(slider, i) {
-                return '<a href="javascript:void(0);" style="background:#000 url(\''+$(slider.$slides[i]).attr('data-dot-image')+'\') 50% / cover no-repeat"></a>';
+            customPaging: function (slider, i) {
+                return '<a href="javascript:void(0);" style="background:#000 url(\'' + $(slider.$slides[i]).attr('data-dot-image') + '\') 50% / cover no-repeat"></a>';
             },
             cssEase: 'linear'
         });
@@ -111,6 +114,18 @@ var InitCarousels = function () {
             prevArrow: cruiseItineraryContainer.find('.cruise-itinerary-prev'),
             nextArrow: cruiseItineraryContainer.find('.cruise-itinerary-next'),
             infinite: false
+        });
+    }
+
+    if (deckPlansCarousel.length) {
+        deckPlansCarousel.slick({
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            arrows: true,
+            prevArrow: deckPlansContainer.find('.deck-plans-prev'),
+            nextArrow: deckPlansContainer.find('.deck-plans-next'),
+            infinite: false,
+            variableWidth: true
         });
     }
 }
@@ -196,9 +211,25 @@ var GenerateMap = function (locationLong, locationLat) {
     }
 }
 
+//Render fixed details menu
+var RenderFixedDetailsMenu = function () {
+    var distance = $('.details-tabs-section').offset().top - $('.details-tabs').height();
+
+    $window.scroll(function () {
+        if ($window.scrollTop() >= distance) {
+            // Your div has reached the top
+            $('.details-tabs').addClass('menu-fixed').css('top',0);
+        }
+        else{
+            $('.details-tabs').removeClass('menu-fixed').removeAttr('style');
+        }
+    });
+}
+
 $(document).ready(function () {
     InitCarousels();
     InitParallax();
+    RenderFixedDetailsMenu();
 
     if ($('#home-video').length) {
         InitHomeVideo();
@@ -221,4 +252,18 @@ $(document).ready(function () {
             return false;
         });
     }
+
+    if ($('.details-tabs-section').length) {
+        $('.details-tabs-section a').on('click', function (e) {
+            e.preventDefault;
+            $('html,body').animate({
+                scrollTop: $($(this).attr('href')).offset().top - $('.details-tabs').height()
+            }, 'slow');
+            return false;
+        });
+    }
+});
+
+$window.on('scroll',function(){
+    RenderFixedDetailsMenu();
 });

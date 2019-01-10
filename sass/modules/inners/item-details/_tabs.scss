@@ -6,6 +6,15 @@
         left: 0;
         right: 0;
         @include transform(translateY(-100%));
+        //@include transition;
+
+        &.menu-fixed{
+            position:fixed;
+            z-index:200;
+            background:$primary-color;
+            border-bottom:1px solid #fff;
+            @include transform(none);
+        }
 
         ul {
             overflow: hidden;
