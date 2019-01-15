@@ -213,17 +213,34 @@ var GenerateMap = function (locationLong, locationLat) {
 
 //Render fixed details menu
 var RenderFixedDetailsMenu = function () {
-    var distance = $('.details-tabs-section').offset().top - $('.details-tabs').height();
+    if ($('.details-tabs-section').length) {
+        var distance = $('.details-tabs-section').offset().top - $('.details-tabs').height();
+        var windowTopWithoutMenu = $window.scrollTop() + $('.details-tabs').height();
 
-    $window.scroll(function () {
         if ($window.scrollTop() >= distance) {
             // Your div has reached the top
-            $('.details-tabs').addClass('menu-fixed').css('top',0);
-        }
-        else{
+            $('.details-tabs').addClass('menu-fixed').css('top', 0);
+        } else {
             $('.details-tabs').removeClass('menu-fixed').removeAttr('style');
         }
-    });
+
+        $('.details-tabs a').each(function () {
+            var detailsSection = $($(this).attr('href'));
+            if (detailsSection.length) {
+                var detailsSectionTop = detailsSection.offset().top;
+                var detailsSectionHeight = detailsSection.outerHeight();
+                if (windowTopWithoutMenu >= detailsSectionTop && windowTopWithoutMenu < (detailsSectionTop + detailsSectionHeight)) {
+                    $(this).addClass('active');
+                } else {
+                    if ($(this).closest('li').index() == 0 && windowTopWithoutMenu < detailsSectionTop) {
+                        $(this).addClass('active');
+                    } else {
+                        $(this).removeClass('active');
+                    }
+                }
+            }
+        });
+    }
 }
 
 $(document).ready(function () {
@@ -245,25 +262,26 @@ $(document).ready(function () {
     }
 
     if ($('.setifirst-top-btn').length) {
-        $('.setifirst-top-btn').on('click', function (e) {
+        $('.setifirst-top-btn').on('click', function () {
             $('html,body').animate({
                 scrollTop: 0
-            }, 'slow');
-            return false;
+            });
         });
     }
 
     if ($('.details-tabs-section').length) {
         $('.details-tabs-section a').on('click', function (e) {
             e.preventDefault;
+            // $('.details-tabs-section a').not(this).removeClass('active');
+            // $(this).addClass('active');
             $('html,body').animate({
                 scrollTop: $($(this).attr('href')).offset().top - $('.details-tabs').height()
-            }, 'slow');
+            });
             return false;
         });
     }
 });
 
-$window.on('scroll',function(){
+$window.on('scroll', function () {
     RenderFixedDetailsMenu();
 });
