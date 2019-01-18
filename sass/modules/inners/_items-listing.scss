@@ -62,7 +62,7 @@
             }
 
             a {
-                font: normal strip-unit(14rem / $body-font-size) 'Roboto';
+                font: normal strip-unit(14rem / $body-font-size) $secondary-font;
 
                 &:hover {
                     text-decoration: underline;

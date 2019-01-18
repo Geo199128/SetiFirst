@@ -28,21 +28,21 @@
     }
 
     &.secondary-btn {
-        background: transparent;
-        color: $primary-color;
+        background: $primary-color;
+        color: #fff;
         border: 2px solid $primary-color;
 
         &:hover {
-            background: $primary-color;
-            color: #fff;
+            background: $secondary-color;
+            color: $primary-color;
         }
     }
 
     &.read-more-btn {
-        font: normal 1.1rem 'poppins';
+        font: normal 1.1rem $primary-font;
     }
 
     &.check-all-btn {
-        font: 900 1.1rem 'poppins';
+        font: 900 1.1rem $primary-font;
     }
 }

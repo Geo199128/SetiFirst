@@ -16,15 +16,23 @@
                 color: $primary-color;
                 @extend %box-sizing;
 
+                .sailing-date,.itinerary-details-btn{
+                    width:100%;
+                }
+
+                .itinerary-details-btn{
+                    font-weight:bold;
+                }
+
                 span {
                     display: block;
 
                     &.nights {
-                        font:900 #{72rem / strip-unit($body-font-size)}/1em 'Roboto';
+                        font:900 #{72rem / strip-unit($body-font-size)}/1em $secondary-font;
                     }
 
                     &.label {
-                        font:900 #{24rem / strip-unit($body-font-size)}/1em 'Poppins';
+                        font:900 #{24rem / strip-unit($body-font-size)}/1em $primary-font;
                         padding: 20px 30px;
                         border-bottom: 3px solid $primary-color;
                         display: inline-block;
@@ -34,16 +42,18 @@
                     }
 
                     &.date {
-                        font:Normal #{14rem / strip-unit($body-font-size)}/1.2em 'Roboto';
+                        font:Normal #{14rem / strip-unit($body-font-size)}/1.2em $secondary-font;
                         margin-bottom: 10px;
                     }
 
                     &.sailing-date {
-                        font:Normal #{14rem / strip-unit($body-font-size)}/1.2em 'Roboto';
+                        font:900 #{14rem / strip-unit($body-font-size)}/1.2em $secondary-font;
                         display: inline-block;
-                        color: #fff;
-                        background: $primary-color;
+                        color: $primary-color;
+                        background: #efefef;
                         padding: 7px 10px;
+                        margin-bottom: 10px;
+                        text-transform: uppercase;
                         @extend %box-sizing;
                     }
                 }

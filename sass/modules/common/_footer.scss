@@ -9,7 +9,7 @@ footer {
 
     h3 {
         margin-top: 0;
-        font:bold 18rem / strip-unit($body-font-size) 'Roboto';
+        font:bold 18rem / strip-unit($body-font-size) $secondary-font;
     }
 
     a {

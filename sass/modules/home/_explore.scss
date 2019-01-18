@@ -10,7 +10,7 @@
         line-height:50vh;
         color:#fff;
         text-align:center;
-        font: bold (38rem / strip-unit($body-font-size)) 'Poppins';
+        font: bold (38rem / strip-unit($body-font-size)) $primary-font;
         @extend %background-size-cover;
         text-decoration: none;
         position:relative;

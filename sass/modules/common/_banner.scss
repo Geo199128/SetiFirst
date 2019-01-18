@@ -13,7 +13,7 @@
         right:0;
         bottom:0;
         left:0;
-        background:$primary-color;
+        background:darken($primary-color,5%);
         opacity:0.35;
     }
 
@@ -25,7 +25,7 @@
     }
 
     .breadcrumb {
-        font: bold 16rem / strip-unit($body-font-size) 'Poppins';
+        font: bold 16rem / strip-unit($body-font-size) $primary-font;
         text-transform: uppercase;
 
         *{

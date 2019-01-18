@@ -11,7 +11,7 @@
         margin-bottom:50px;
 
         h3 {
-            font: 900 $h3-font-size 'Poppins';
+            font: 900 $h3-font-size $primary-font;
             color: #fff;
             margin: 0;
             text-transform: uppercase;
@@ -101,7 +101,7 @@
                 border-radius: 100%;
                 width: 135px;
                 height: 135px;
-                font: 900 20rem / strip-unit($body-font-size) 'Poppins';
+                font: 900 20rem / strip-unit($body-font-size) $primary-font;
                 color: $primary-color;
                 text-transform: uppercase;
                 @extend %box-sizing;

@@ -34,7 +34,7 @@ header {
             &,
             &:visited {
                 text-decoration: none;
-                font: normal 16rem / strip-unit($body-font-size) 'Roboto';
+                font: normal 16rem / strip-unit($body-font-size) $secondary-font;
                 @include transition;
             }
         }

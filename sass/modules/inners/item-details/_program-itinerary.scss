@@ -1,0 +1,140 @@
+.details-program-itinerary {
+    background: #efefef;
+
+    .itinerary-header {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 50px;
+
+        h2 {
+            float: left;
+            margin-bottom: 0;
+        }
+
+        .program-full-itinerary-btn {
+            float: right;
+        }
+    }
+
+    .program-itinerary-carousel {
+        margin-bottom: 15px;
+
+        .program-itinerary-item {
+            display: inline-block;
+
+            .program-itinerary-day-count {
+                float: left;
+                font:bold #{120rem / strip-unit($body-font-size)}/0.75em $secondary-font;
+                color: $primary-color;
+                margin-right: 20px;
+            }
+
+            .program-itinerary-info {
+                overflow: hidden;
+
+                h3 {
+                    font:900 #{20rem / strip-unit($body-font-size)}/1.2em $primary-font;
+                    margin: 0 0 15px;
+                    padding-bottom: 20px;
+                    position: relative;
+                    display: inline-block;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 3px;
+                        width: 35%;
+                        background: $primary-color;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                    }
+                }
+
+                p {
+                    font:normal #{14rem / strip-unit($body-font-size)}/1.2em $secondary-font;
+                    color: $primary-color;
+                    width: 95%;
+                }
+            }
+        }
+    }
+
+    .program-itinerary-nav {
+        text-align: center;
+
+        a {
+            font:normal #{18rem / strip-unit($body-font-size)}/1em $secondary-font;
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $primary-color;
+            margin: 0 10px;
+
+            i {
+                float: right;
+                margin: 0 5px;
+            }
+
+            &.nav-prev {
+                i {
+                    float: left;
+                    @include transform(scaleX(-1));
+                }
+            }
+        }
+    }
+
+    .program-itinerary-progress{
+        height:3px;
+        background:#d9d9d9;
+        margin-top:30px;
+
+        .fill{
+            background:$secondary-color;
+            height:100%;
+            @include transition(all 0.5s);
+        }
+    }
+}
+
+#program-itinerary-popup{
+    background:#fff;
+    padding:35px 25px;
+    overflow:auto;
+    @extend %pseudo-vertical-align;
+    @extend %box-sizing;
+
+    .program-full-itinerary{
+        width:95%;
+        text-align:left;
+        @extend %vertical-align;
+
+        h2{
+            text-align:left;
+            padding-bottom:20px;
+            margin-bottom:20px;
+            position:relative;
+            display:inline-block;
+
+            &:after{
+                content:'';
+                display:block;
+                width:50%;
+                height:3px;
+                background:$primary-color;
+                position:absolute;
+                left:0;
+                top:100%;
+            }
+        }
+
+        h3{
+            margin-bottom:15px;
+        }
+
+        p{
+            margin-bottom:25px;
+        }
+    }
+}

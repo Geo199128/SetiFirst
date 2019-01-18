@@ -528,6 +528,7 @@ button:focus {
 
 /*Colors*/
 /*Font sizes*/
+/*Font families*/
 /*Line height*/
 /*Heights*/
 /*Margins and padding*/
@@ -666,7 +667,7 @@ button:focus {
   background: transparent;
 }
 
-header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before, header .container, header .container .top-nav .main-menu, .other-section .other-item-container .item h4, .inners-banner .container, .hero-carousel .hero-desc, .home-about .about-info, .home-about .about-image, .home-video .container, .landing-item .landing-item-container, .details-rooms-facilities .facilities-container h3, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-type span, .details-rooms-facilities .rooms-container .room-item .room-info {
+header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before, #program-itinerary-popup:before, header .container, header .container .top-nav .main-menu, .other-section .other-item-container .item h4, .inners-banner .container, .hero-carousel .hero-desc, .home-about .about-info, .home-about .about-image, .home-video .container, .landing-item .landing-item-container, .details-rooms-facilities .facilities-container h3, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-type span, .details-rooms-facilities .rooms-container .room-item .room-info, #program-itinerary-popup .program-full-itinerary {
   display: inline-block;
   vertical-align: middle;
 }
@@ -675,16 +676,16 @@ header:before, header .container .top-nav:before, .other-section .other-item-con
 input[type=email],
 input[type=password],
 select,
-textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav a, header .container .bottom-nav a:visited, footer, footer .footer-grid .footer-column, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .gallery-container .gallery-carousel .slick-dots li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, .details-deck-plans .deck-plans-container .deck-plans-item {
+textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav a, header .container .bottom-nav a:visited, footer, footer .footer-grid .footer-column, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, #program-itinerary-popup, .details-deck-plans .deck-plans-container .deck-plans-item {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-header, header .container .top-nav, .other-section .other-item-container .item .other-img, .inners-banner, .hero-carousel .hero-item, .home-video, .landing-item, .details-rooms-facilities .rooms-container .room-item .room-type {
+header, header .container .top-nav, .other-section .other-item-container .item .other-img, .inners-banner, .hero-carousel .hero-item, .home-video, .landing-item, .details-rooms-facilities .rooms-container .room-item .room-type, #program-itinerary-popup {
   text-align: center;
 }
 
-header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before {
+header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before, #program-itinerary-popup:before {
   content: '';
   width: 0;
   height: 100%;
@@ -725,7 +726,7 @@ input[type=email]::-webkit-input-placeholder,
 input[type=password]::-webkit-input-placeholder,
 select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  font: normal 1rem 'Roboto';
+  font: normal 1rem "Roboto";
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -734,7 +735,7 @@ input[type=email]::-moz-placeholder,
 input[type=password]::-moz-placeholder,
 select::-moz-placeholder,
 textarea::-moz-placeholder {
-  font: normal 1rem 'Roboto';
+  font: normal 1rem "Roboto";
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -743,7 +744,7 @@ input[type=email]::-ms-input-placeholder,
 input[type=password]::-ms-input-placeholder,
 select::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  font: normal 1rem 'Roboto';
+  font: normal 1rem "Roboto";
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -752,7 +753,7 @@ input[type=email]::-moz-placeholder,
 input[type=password]::-moz-placeholder,
 select::-moz-placeholder,
 textarea::-moz-placeholder {
-  font: normal 1rem 'Roboto';
+  font: normal 1rem "Roboto";
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -863,7 +864,7 @@ textarea {
 html,
 body {
   min-height: 100vh;
-  font: normal 14px 'Roboto';
+  font: normal 14px "Roboto";
 }
 
 body {
@@ -1005,7 +1006,7 @@ ul {
   text-align: center;
   line-height: 50px;
   text-decoration: none;
-  z-index: 1000;
+  z-index: 100;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1019,6 +1020,10 @@ ul {
 .setifirst-top-btn:hover {
   -webkit-animation: pulse 1s infinite;
   animation: pulse 1s infinite;
+}
+
+.slick-arrow.slick-hidden {
+  display: none !important;
 }
 
 .socials {
@@ -1119,22 +1124,22 @@ ul {
 }
 
 .btn.secondary-btn {
-  background: transparent;
-  color: #012349;
+  background: #012349;
+  color: #fff;
   border: 2px solid #012349;
 }
 
 .btn.secondary-btn:hover {
-  background: #012349;
-  color: #fff;
+  background: #f6aa00;
+  color: #012349;
 }
 
 .btn.read-more-btn {
-  font: normal 1.1rem 'poppins';
+  font: normal 1.1rem "Poppins";
 }
 
 .btn.check-all-btn {
-  font: 900 1.1rem 'poppins';
+  font: 900 1.1rem "Poppins";
 }
 
 .select-field {
@@ -1165,7 +1170,7 @@ textarea {
   background: #fff;
   width: 100%;
   padding: 0 20px;
-  font: normal 1.1rem 'Roboto';
+  font: normal 1.1rem "Roboto";
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1238,11 +1243,12 @@ textarea {
   text-decoration: none;
 }
 
-.popup #map {
+.popup .popup-content {
   width: 80vw;
   height: 80vh;
   margin: 0 auto;
   margin-top: 10vh;
+  display: none;
 }
 
 header {
@@ -1334,7 +1340,7 @@ header .container .bottom-nav a:hover {
 }
 
 .other-section h3 {
-  font: bold 2.14rem/1.1em 'Poppins';
+  font: bold 2.14rem/1.1em "Poppins";
   text-transform: uppercase;
 }
 
@@ -1399,7 +1405,7 @@ header .container .bottom-nav a:hover {
 }
 
 .other-section .other-item-container .item h4 {
-  font: bold 2rem/1em 'Poppins';
+  font: bold 2rem/1em "Poppins";
   color: #fff;
   text-transform: uppercase;
   width: 90%;
@@ -1439,7 +1445,7 @@ header .container .bottom-nav a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #012349;
+  background: #011730;
   opacity: 0.35;
 }
 
@@ -1761,7 +1767,7 @@ footer .footer-info div {
 
 .home-video .container span {
   display: block;
-  font: normal 1.28rem 'Roboto';
+  font: normal 1.28rem "Roboto";
   text-transform: uppercase;
   color: #fff;
 }
@@ -2009,6 +2015,59 @@ footer .footer-info div {
   transition: background 0.3s, color 0.3s, opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s, -webkit-transform 0.3s ease 0.1s;
 }
 
+.content-section h2 {
+  font: 900 1.71429rem/1.1em "Poppins";
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.content-section h3 {
+  font: 900 1.28571rem/1.1em "Poppins";
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.content-section h3:first-child {
+  margin-top: 0;
+}
+
+.content-section p {
+  margin-bottom: 20px;
+}
+
+.content-section a {
+  color: #f6aa00;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.content-section a:hover {
+  color: #012349;
+}
+
+.content-section ul li {
+  font: normal 1rem/1.1em "Roboto";
+  margin-bottom: 20px;
+  color: #737373;
+  padding-left: 15px;
+}
+
+.content-section ul li * {
+  margin: 0;
+}
+
+.content-section ul li:before {
+  content: '';
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 5px;
+  height: 5px;
+  background: #f6aa00;
+  border-radius: 100%;
+  margin: 4px 0 0 -15px;
+}
+
 .details-tabs-section {
   position: relative;
 }
@@ -2023,7 +2082,7 @@ footer .footer-info div {
 
 .details-tabs-section .details-tabs.menu-fixed {
   position: fixed;
-  z-index: 200;
+  z-index: 100;
   background: #012349;
   border-bottom: 1px solid #fff;
   -webkit-transform: none;
@@ -2040,7 +2099,7 @@ footer .footer-info div {
 }
 
 .details-tabs-section .details-tabs a {
-  font: normal 1.142rem/1em 'Poppins';
+  font: normal 1.142rem/1em "Poppins";
   color: #fff;
   text-decoration: none;
   display: block;
@@ -2069,34 +2128,16 @@ footer .footer-info div {
   height: 550px;
 }
 
-.gallery-container .gallery-carousel .slick-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.gallery-container .gallery-carousel .slick-dots li {
-  width: calc(100% / 10);
-  display: inline-block;
-  overflow: hidden;
-  padding: 0 10px;
-}
-
-.gallery-container .gallery-carousel .slick-dots li a {
-  display: block;
-  width: 100%;
-  padding-bottom: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+.gallery-container .gallery-related-carousel .gallery-item {
+  height: 100px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.gallery-container .gallery-carousel .slick-dots li a:before {
+.gallery-container .gallery-related-carousel .gallery-item:before {
   content: '';
   display: block;
   position: absolute;
@@ -2111,12 +2152,7 @@ footer .footer-info div {
   transition: all 0.3s;
 }
 
-.gallery-container .gallery-carousel .slick-dots li.slick-active a {
-  border-color: #f6aa00;
-}
-
-.gallery-container .gallery-carousel .slick-dots li.slick-active a:before,
-.gallery-container .gallery-carousel .slick-dots li a:hover:before {
+.gallery-container .gallery-related-carousel .gallery-item.slick-current:before, .gallery-container .gallery-related-carousel .gallery-item:hover:before {
   opacity: 0;
 }
 
@@ -2133,14 +2169,14 @@ footer .footer-info div {
 
 .gallery-container .gallery-nav a.nav-prev {
   left: 0;
-  -webkit-transform: translateY(-50%) rotate(180deg);
-  transform: translateY(-50%) rotate(180deg);
+  -webkit-transform: translateY(calc(-50% - 50px)) rotate(180deg);
+  transform: translateY(calc(-50% - 50px)) rotate(180deg);
 }
 
 .gallery-container .gallery-nav a.nav-next {
   right: 0;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translateY(calc(-50% - 50px));
+  transform: translateY(calc(-50% - 50px));
 }
 
 .details-rooms-facilities {
@@ -2298,6 +2334,14 @@ footer .footer-info div {
   color: #012349;
 }
 
+.details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .sailing-date, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .itinerary-details-btn {
+  width: 100%;
+}
+
+.details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .itinerary-details-btn {
+  font-weight: bold;
+}
+
 .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span {
   display: block;
 }
@@ -2321,11 +2365,13 @@ footer .footer-info div {
 }
 
 .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date {
-  font: Normal 1rem/1.2em "Roboto";
+  font: 900 1rem/1.2em "Roboto";
   display: inline-block;
-  color: #fff;
-  background: #012349;
+  color: #012349;
+  background: #efefef;
   padding: 7px 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-nav {
@@ -2342,6 +2388,144 @@ footer .footer-info div {
 .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-nav a:hover {
   background: transparent !important;
   color: #012349 !important;
+}
+
+.details-program-itinerary {
+  background: #efefef;
+}
+
+.details-program-itinerary .itinerary-header {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.details-program-itinerary .itinerary-header h2 {
+  float: left;
+  margin-bottom: 0;
+}
+
+.details-program-itinerary .itinerary-header .program-full-itinerary-btn {
+  float: right;
+}
+
+.details-program-itinerary .program-itinerary-carousel {
+  margin-bottom: 15px;
+}
+
+.details-program-itinerary .program-itinerary-carousel .program-itinerary-item {
+  display: inline-block;
+}
+
+.details-program-itinerary .program-itinerary-carousel .program-itinerary-item .program-itinerary-day-count {
+  float: left;
+  font: bold 8.57143rem/0.75em "Roboto";
+  color: #012349;
+  margin-right: 20px;
+}
+
+.details-program-itinerary .program-itinerary-carousel .program-itinerary-item .program-itinerary-info {
+  overflow: hidden;
+}
+
+.details-program-itinerary .program-itinerary-carousel .program-itinerary-item .program-itinerary-info h3 {
+  font: 900 1.42857rem/1.2em "Poppins";
+  margin: 0 0 15px;
+  padding-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.details-program-itinerary .program-itinerary-carousel .program-itinerary-item .program-itinerary-info h3:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 35%;
+  background: #012349;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.details-program-itinerary .program-itinerary-carousel .program-itinerary-item .program-itinerary-info p {
+  font: normal 1rem/1.2em "Roboto";
+  color: #012349;
+  width: 95%;
+}
+
+.details-program-itinerary .program-itinerary-nav {
+  text-align: center;
+}
+
+.details-program-itinerary .program-itinerary-nav a {
+  font: normal 1.28571rem/1em "Roboto";
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #012349;
+  margin: 0 10px;
+}
+
+.details-program-itinerary .program-itinerary-nav a i {
+  float: right;
+  margin: 0 5px;
+}
+
+.details-program-itinerary .program-itinerary-nav a.nav-prev i {
+  float: left;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.details-program-itinerary .program-itinerary-progress {
+  height: 3px;
+  background: #d9d9d9;
+  margin-top: 30px;
+}
+
+.details-program-itinerary .program-itinerary-progress .fill {
+  background: #f6aa00;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#program-itinerary-popup {
+  background: #fff;
+  padding: 35px 25px;
+  overflow: auto;
+}
+
+#program-itinerary-popup .program-full-itinerary {
+  width: 95%;
+  text-align: left;
+}
+
+#program-itinerary-popup .program-full-itinerary h2 {
+  text-align: left;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+#program-itinerary-popup .program-full-itinerary h2:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: #012349;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+#program-itinerary-popup .program-full-itinerary h3 {
+  margin-bottom: 15px;
+}
+
+#program-itinerary-popup .program-full-itinerary p {
+  margin-bottom: 25px;
 }
 
 .details-deck-plans .deck-plans-container {

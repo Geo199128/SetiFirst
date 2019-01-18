@@ -1,6 +1,7 @@
-.details-gallery{
-    margin-top:$section-padding;
+.details-gallery {
+    margin-top: $section-padding;
 }
+
 .gallery-container {
     position: relative;
 
@@ -9,60 +10,89 @@
             height: 550px;
         }
 
-        .slick-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            margin: 0 auto;
-            text-align:center;
+        // .slick-dots {
+        //     position: absolute;
+        //     bottom: 20px;
+        //     left: 20px;
+        //     right: 20px;
+        //     margin: 0 auto;
+        //     text-align:center;
 
-            li {
-                width: calc(100% / 10);
-                display:inline-block;
-                overflow: hidden;
-                padding: 0 10px;
-                
-                @extend %box-sizing;
+        //     li {
+        //         width: calc(100% / 10);
+        //         display:inline-block;
+        //         overflow: hidden;
+        //         padding: 0 10px;
 
-                a {
-                    display: block;
-                    width:100%;
-                    padding-bottom:100%;
-                    border:1px solid rgba(0,0,0,0.5);
-                    overflow: hidden;
-                    position: relative;
-                    @include transition;
+        //         @extend %box-sizing;
 
-                    &:before {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        right: 0;
-                        left: 0;
-                        top: 0;
-                        bottom: 0;
-                        background: #000;
-                        opacity: 0.5;
-                        z-index:10;
-                        @include transition;
-                    }
-                }
+        //         a {
+        //             display: block;
+        //             width:100%;
+        //             padding-bottom:100%;
+        //             border:1px solid rgba(0,0,0,0.5);
+        //             overflow: hidden;
+        //             position: relative;
+        //             @include transition;
 
-                &.slick-active a{
-                    border-color:$secondary-color;
-                }
-                &.slick-active a:before,
-                & a:hover:before {
-                    opacity: 0;
-                }
+        //             &:before {
+        //                 content: '';
+        //                 display: block;
+        //                 position: absolute;
+        //                 right: 0;
+        //                 left: 0;
+        //                 top: 0;
+        //                 bottom: 0;
+        //                 background: #000;
+        //                 opacity: 0.5;
+        //                 z-index:10;
+        //                 @include transition;
+        //             }
+        //         }
+
+        //         &.slick-active a{
+        //             border-color:$secondary-color;
+        //         }
+        //         &.slick-active a:before,
+        //         & a:hover:before {
+        //             opacity: 0;
+        //         }
+        //     }
+        // }
+    }
+
+    .gallery-related-carousel {
+        .gallery-item {
+            height:100px;
+            overflow: hidden;
+            position: relative;
+            cursor:pointer;
+            @include transition;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                background: #000;
+                opacity: 0.5;
+                z-index: 10;
+                @include transition;
+            }
+
+            &.slick-current:before,
+            &:hover:before {
+                opacity: 0;
             }
         }
     }
 
     .gallery-nav {
         position: static;
-        display:block;
+        display: block;
 
         a {
             position: absolute;
@@ -71,12 +101,12 @@
 
             &.nav-prev {
                 left: 0;
-                @include transform(translateY(-50%) rotate(180deg));
+                @include transform(translateY(calc(-50% - 50px)) rotate(180deg));
             }
 
             &.nav-next {
                 right: 0;
-                @include transform(translateY(-50%));
+                @include transform(translateY(calc(-50% - 50px)));
             }
         }
     }

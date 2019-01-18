@@ -10,7 +10,7 @@
 
         &.menu-fixed{
             position:fixed;
-            z-index:200;
+            z-index:100;
             background:$primary-color;
             border-bottom:1px solid #fff;
             @include transform(none);
@@ -26,7 +26,7 @@
         }
 
         a {
-            font: normal 1.142rem/1em 'Poppins';
+            font: normal 1.142rem/1em $primary-font;
             color: #fff;
             text-decoration: none;
             display: block;

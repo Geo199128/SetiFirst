@@ -29,7 +29,7 @@
         padding:20px;
         @extend %box-sizing;
         h3 {
-            font:bold #{(18rem / strip-unit($body-font-size))}/1em 'Roboto';
+            font:bold #{(18rem / strip-unit($body-font-size))}/1em $secondary-font;
             margin: 20px 0;
         }
 

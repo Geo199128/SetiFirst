@@ -27,7 +27,7 @@ function includeHTML() {
             xhttp.open("GET", file, true);
             xhttp.send();
 
-            $(document).find('svg').find('*').removeAttr('style');
+            $(document).find('svg').find('*').removeAttr('style').removeAttr('fill');
             /* Exit the function: */
             return;
         }
@@ -58,9 +58,12 @@ var InitCarousels = function () {
         newsSectionContainer = $('.latest-news .container'),
         latestNewsCarousel = $('.latest-news-carousel'),
         detailsGalleryCarousel = $('.gallery-carousel'),
+        detailsGalleryRelatedCarousel = $('.gallery-related-carousel'),
         detailsGalleryContainer = $('.gallery-container'),
         cruiseItineraryCarousel = $('.cruise-itinerary-carousel'),
         cruiseItineraryContainer = $('.cruise-itinerary-container'),
+        programItineraryCarousel = $('.program-itinerary-carousel'),
+        programItineraryContainer = $('.program-itinerary-container'),
         deckPlansCarousel = $('.deck-plans-carousel'),
         deckPlansContainer = $('.deck-plans-container');
     if (heroList.length) {
@@ -90,19 +93,28 @@ var InitCarousels = function () {
 
     if (detailsGalleryCarousel.length) {
         detailsGalleryCarousel.slick({
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 4000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             speed: 500,
+            fade: true,
+            arrows: false,
+            dots: false,
+            asNavFor: detailsGalleryRelatedCarousel,
+            cssEase: 'linear'
+        });
+        detailsGalleryRelatedCarousel.slick({
+            slidesToShow: 9,
+            slidesToScroll: 1,
+            infinity: false,
+            asNavFor: detailsGalleryCarousel,
+            speed: 250,
             arrows: true,
             prevArrow: detailsGalleryContainer.find('.gallery-prev'),
             nextArrow: detailsGalleryContainer.find('.gallery-next'),
-            fade: true,
-            dots: true,
-            customPaging: function (slider, i) {
-                return '<a href="javascript:void(0);" style="background:#000 url(\'' + $(slider.$slides[i]).attr('data-dot-image') + '\') 50% / cover no-repeat"></a>';
-            },
-            cssEase: 'linear'
+            dots: false,
+            centerMode: true,
+            focusOnSelect: true,
+            cssEase: 'ease'
         });
     }
 
@@ -114,6 +126,24 @@ var InitCarousels = function () {
             prevArrow: cruiseItineraryContainer.find('.cruise-itinerary-prev'),
             nextArrow: cruiseItineraryContainer.find('.cruise-itinerary-next'),
             infinite: false
+        });
+    }
+
+    if (programItineraryCarousel.length) {
+        var programItineraryProgress = $('.program-itinerary-progress');
+        var itemsCount = programItineraryCarousel.find('.program-itinerary-item').length;
+        var progressPercentage = 100 / itemsCount;
+        console.log(progressPercentage);
+        programItineraryProgress.find('.fill').css('width', progressPercentage + '%');
+        programItineraryCarousel.slick({
+            arrows: true,
+            prevArrow: programItineraryContainer.find('.program-itinerary-prev'),
+            nextArrow: programItineraryContainer.find('.program-itinerary-next'),
+            infinite: false,
+            speed: 500
+        }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            percentage = (nextSlide + 1) * progressPercentage;
+            programItineraryProgress.find('.fill').css('width', percentage + '%');
         });
     }
 
@@ -186,18 +216,18 @@ var InitHomeVideo = function () {
     GetMouseDownCoordinates($('#home-video-section'));
 }
 
-//Trim text
-
 //Init popup
-var InitPopup = function () {
+var InitPopup = function (container) {
     var popup = $('.popup');
     $('body').addClass('unscrollable');
-    popup.fadeIn(300);
-    popup.find('.popup-close-btn').off().on('click', function () {
-        popup.fadeOut(300);
-        setTimeout(function () {
-            $('body').removeClass('unscrollable');
-        }, 300);
+    popup.fadeIn(300).find(container).fadeIn(300);
+    $(popup, popup.find('.popup-close-btn')).off().on('click', function (e) {
+        if (!$(e.target).closest('.popup-content').length && !$(e.target).hasClass('.popup-content')) {
+            popup.fadeOut(300).find(container).fadeOut(300);
+            setTimeout(function () {
+                $('body').removeClass('unscrollable');
+            }, 300);
+        }
     });
 }
 
@@ -227,7 +257,8 @@ var RenderFixedDetailsMenu = function () {
         $('.details-tabs a').each(function () {
             var detailsSection = $($(this).attr('href'));
             if (detailsSection.length) {
-                var detailsSectionTop = detailsSection.offset().top;
+                // adding 1px before the section top to avoid sections menu issue of not marking the active section when it scrolls to the top of the section
+                var detailsSectionTop = detailsSection.offset().top - 1;
                 var detailsSectionHeight = detailsSection.outerHeight();
                 if (windowTopWithoutMenu >= detailsSectionTop && windowTopWithoutMenu < (detailsSectionTop + detailsSectionHeight)) {
                     $(this).addClass('active');
@@ -257,7 +288,7 @@ $(document).ready(function () {
             var long = $(this).data('long');
             var lat = $(this).data('lat');
             GenerateMap(long, lat);
-            InitPopup();
+            InitPopup($('#map'));
         });
     }
 
@@ -278,6 +309,12 @@ $(document).ready(function () {
                 scrollTop: $($(this).attr('href')).offset().top - $('.details-tabs').height()
             });
             return false;
+        });
+    }
+
+    if ($('.program-full-itinerary-btn').length) {
+        $('.program-full-itinerary-btn').on('click', function () {
+            InitPopup($('#program-itinerary-popup'));
         });
     }
 });

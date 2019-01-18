@@ -64,22 +64,22 @@
 
 %style-placeholder {
     &::-webkit-input-placeholder {
-        font: normal 1rem 'Roboto';
+        font: normal 1rem $secondary-font;
         color: rgba(0, 0, 0, 0.8);
     }
 
     &::-moz-placeholder {
-        font: normal 1rem 'Roboto';
+        font: normal 1rem $secondary-font;
         color: rgba(0, 0, 0, 0.8);
     }
 
     &::-ms-input-placeholder {
-        font: normal 1rem 'Roboto';
+        font: normal 1rem $secondary-font;
         color: rgba(0, 0, 0, 0.8);
     }
 
     &::-moz-placeholder {
-        font: normal 1rem 'Roboto';
+        font: normal 1rem $secondary-font;
         color: rgba(0, 0, 0, 0.8);
     }
 }

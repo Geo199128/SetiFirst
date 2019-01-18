@@ -10,7 +10,7 @@
 html,
 body {
     min-height: 100vh;
-    font: normal 14px 'Roboto';
+    font: normal 14px $secondary-font;
 }
 
 body {
@@ -33,14 +33,14 @@ body {
 }
 
 h1 {
-    font:900 #{$h1-font-size}/1em 'Poppins';
+    font:900 #{$h1-font-size}/1em $primary-font;
     margin-bottom: $banner-title-margin;
     text-transform: uppercase;
     color: #fff;
 }
 
 h2 {
-    font:900 #{$h2-font-size}/1em 'Poppins';
+    font:900 #{$h2-font-size}/1em $primary-font;
     text-transform: uppercase;
     color: #012349;
     text-align: center;
@@ -48,13 +48,13 @@ h2 {
 }
 
 h3 {
-    font:900 #{$h3-font-size}/1em 'Poppins';
+    font:900 #{$h3-font-size}/1em $primary-font;
     color: #012349;
     margin: 15px 0 20px;
 }
 
 p {
-    font:normal #{$body-font-size}/#{$p-line-height} 'Roboto';
+    font:normal #{$body-font-size}/#{$p-line-height} $secondary-font;
     color: #737373;
     margin-bottom: 15px;
 }
@@ -120,7 +120,7 @@ ul {
         position: absolute;
         top: 35%;
         text-transform: uppercase;
-        font: 900 (170rem / strip-unit($body-font-size)) 'Poppins';
+        font: 900 (170rem / strip-unit($body-font-size)) $primary-font;
         opacity: 0.09;
         white-space: nowrap;
     }
@@ -153,7 +153,7 @@ ul {
         text-align: center;
         line-height: 50px;
         text-decoration: none;
-        z-index: 1000;
+        z-index: 100;
         @include transition;
 
         &:before {
@@ -165,4 +165,8 @@ ul {
     &:hover {
         @include animation(pulse 1s infinite);
     }
+}
+
+.slick-arrow.slick-hidden {
+    display: none!important;
 }

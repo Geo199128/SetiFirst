@@ -3,7 +3,7 @@
     @extend %background-size-cover;
 
     h3 {
-        font: bold 2.14rem/1.1em 'Poppins';
+        font: bold 2.14rem/1.1em $primary-font;
         text-transform: uppercase;
     }
 
@@ -70,7 +70,7 @@
             }
 
             h4 {
-                font: bold 2rem/1em 'Poppins';
+                font: bold 2rem/1em $primary-font;
                 color: #fff;
                 text-transform: uppercase;
                 width: 90%;
