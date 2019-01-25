@@ -676,7 +676,7 @@ header:before, header .container .top-nav:before, .other-section .other-item-con
 input[type=email],
 input[type=password],
 select,
-textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav a, header .container .bottom-nav a:visited, footer, footer .footer-grid .footer-column, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, #program-itinerary-popup, .details-deck-plans .deck-plans-container .deck-plans-item {
+textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav .explore-menu a, header .container .bottom-nav .search-lang .search .search-toggle-btn, footer, footer .footer-grid .footer-column, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, #program-itinerary-popup, .details-deck-plans .deck-plans-container .deck-plans-item {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -1327,12 +1327,83 @@ header .container .bottom-nav a, header .container .bottom-nav a:visited {
   line-height: 60px;
   height: 100%;
   display: block;
-  opacity: 1;
+}
+
+header .container .bottom-nav .explore-menu a {
   padding: 0 15px;
 }
 
-header .container .bottom-nav a:hover {
+header .container .bottom-nav .explore-menu a:hover {
   background: #f6aa00;
+}
+
+header .container .bottom-nav .search-lang {
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+
+header .container .bottom-nav .search-lang .lang {
+  float: left;
+  margin-right: 15px;
+}
+
+header .container .bottom-nav .search-lang .lang a,
+header .container .bottom-nav .search-lang .lang span {
+  color: #fff;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+header .container .bottom-nav .search-lang .lang a {
+  text-transform: uppercase;
+}
+
+header .container .bottom-nav .search-lang .lang a:hover {
+  text-decoration: underline;
+}
+
+header .container .bottom-nav .search-lang .search {
+  float: left;
+}
+
+header .container .bottom-nav .search-lang .search .search-toggle-btn {
+  padding: 0 15px;
+}
+
+header .container .bottom-nav .search-lang .search .search-field {
+  position: absolute;
+  top: 100%;
+  left: -50%;
+  right: 15px;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: opacity 0.3s, transform 0.3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+}
+
+header .container .bottom-nav .search-lang .search .search-field.active {
+  z-index: 10;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+header .container .bottom-nav .search-lang .search .search-field a {
+  color: #ccc;
+  position: absolute;
+  right: 15px;
+  line-height: 50px;
+  top: 0;
+}
+
+header .container .bottom-nav .search-lang .search .search-field input {
+  border-radius: 40px;
 }
 
 .other-section {

@@ -283,6 +283,12 @@ $(document).ready(function () {
         InitHomeVideo();
     }
 
+    if ($('.search-toggle-btn').length) {
+        $('.search-toggle-btn').on('click', function () {
+            $('.search-field').toggleClass('active');
+        });
+    }
+
     if ($('.view-map-btn').length) {
         $('.view-map-btn').on('click', function () {
             var long = $(this).data('long');
