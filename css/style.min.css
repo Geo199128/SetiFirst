@@ -1995,6 +1995,7 @@ footer .footer-info div {
 .listing-items {
   margin: 0 -10px;
   display: inline-block;
+  min-width: 100%;
 }
 
 .listing-item {
