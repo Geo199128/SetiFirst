@@ -1,0 +1,84 @@
+.setifirst-group-logos-container {
+    min-height: 100vh;
+
+    .setifirst-group-logos {
+        height: 100vh;
+
+        a {
+            text-decoration: none;
+            display: block;
+            float: left;
+            width: 20%;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+            border-right: 1px solid darken($primary-color, 7%);
+            @include transition(all 0.7s);
+            @extend %box-sizing;
+
+            &:last-child {
+                border-right: 0;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                opacity: 1;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 0;
+                background: rgba($primary-color, 0.9);
+                background: -moz-linear-gradient(top, rgba($primary-color, 0.9) 0%, rgba($primary-color, 0.3) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba($primary-color, 0.9)), color-stop(100%, rgba($primary-color, 0.3)));
+                background: -webkit-linear-gradient(top, rgba($primary-color, 0.9) 0%, rgba($primary-color, 0.3) 100%);
+                background: -o-linear-gradient(top, rgba($primary-color, 0.9) 0%, rgba($primary-color, 0.3) 100%);
+                background: -ms-linear-gradient(top, rgba($primary-color, 0.9) 0%, rgba($primary-color, 0.3) 100%);
+                background: linear-gradient(to bottom, rgba($primary-color, 0.9) 0%, rgba($primary-color, 0.3) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#012349', endColorstr='#012349', GradientType=0);
+                @include transition(all 0.7s);
+                // @include background-opacity($primary-color, 0.3);
+            }
+
+            .setifirst-logo-info {
+                z-index: 10;
+                position: relative;
+                margin: 50vh auto 0;
+                @include transform(translateY(-50%));
+                @include transition(all 0.7s);
+            }
+
+            .setifirst-logo {
+                padding: 10px;
+                background: #fff;
+                display: inline-block;
+                @extend %box-sizing;
+
+                img {
+                    max-width: calc(15vw - 60px);
+                }
+            }
+
+            h2 {
+                font:900 #{35rem / strip-unit($body-font-size)}/#{40rem / strip-unit($body-font-size)} $primary-font;
+                text-transform: uppercase;
+                color: #fff;
+                margin-top:25px;
+            }
+
+            &:hover {
+                //@include transform(scale(1.1));
+                &:before {
+                    opacity: 0;
+                }
+
+                .setifirst-logo-info{
+                    //@include transform(translateY(-50%) scale(0.35));
+                }
+            }
+        }
+    }
+}

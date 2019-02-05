@@ -676,7 +676,7 @@ header:before, header .container .top-nav:before, .other-section .other-item-con
 input[type=email],
 input[type=password],
 select,
-textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav a, header .container .bottom-nav a:visited, footer, footer .footer-grid .footer-column, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, #program-itinerary-popup, .details-deck-plans .deck-plans-container .deck-plans-item {
+textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav a, header .container .bottom-nav a:visited, footer, footer .footer-grid .footer-column, .setifirst-group-logos-container .setifirst-group-logos a, .setifirst-group-logos-container .setifirst-group-logos a .setifirst-logo, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, #program-itinerary-popup, .details-deck-plans .deck-plans-container .deck-plans-item {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -691,7 +691,7 @@ header:before, header .container .top-nav:before, .other-section .other-item-con
   height: 100%;
 }
 
-footer .footer-image img, .latest-news .news-img img {
+.latest-news .news-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1270,8 +1270,8 @@ header .container {
 }
 
 header .container .logo {
-  width: 35%;
-  max-width: 180px;
+  width: 40%;
+  max-width: 200px;
   margin-right: 20px;
   float: left;
 }
@@ -1514,6 +1514,10 @@ footer .footer-image {
   display: block;
 }
 
+footer .footer-image img {
+  height: 100%;
+}
+
 footer .footer-grid {
   display: inline-block;
   width: 100%;
@@ -1543,6 +1547,82 @@ footer .footer-info div {
   margin-bottom: 5px;
 }
 
+.setifirst-group-logos-container {
+  min-height: 100vh;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos {
+  height: 100vh;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a {
+  text-decoration: none;
+  display: block;
+  float: left;
+  width: 20%;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  border-right: 1px solid #011226;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a:last-child {
+  border-right: 0;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(1, 35, 73, 0.9);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(1, 35, 73, 0.9)), color-stop(100%, rgba(1, 35, 73, 0.3)));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 35, 73, 0.9)), to(rgba(1, 35, 73, 0.3)));
+  background: linear-gradient(to bottom, rgba(1, 35, 73, 0.9) 0%, rgba(1, 35, 73, 0.3) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#012349', endColorstr='#012349', GradientType=0);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a .setifirst-logo-info {
+  z-index: 10;
+  position: relative;
+  margin: 50vh auto 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a .setifirst-logo {
+  padding: 10px;
+  background: #fff;
+  display: inline-block;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a .setifirst-logo img {
+  max-width: calc(15vw - 60px);
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a h2 {
+  font: 900 2.5rem/2.85714rem "Poppins";
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.setifirst-group-logos-container .setifirst-group-logos a:hover:before {
+  opacity: 0;
+}
+
 .hero-carousel {
   text-align: center;
 }
@@ -1562,6 +1642,12 @@ footer .footer-info div {
   z-index: 10;
   background: #012349;
   opacity: 0.45;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.hero-carousel .hero-item:hover:after {
+  opacity: 0.3;
 }
 
 .hero-carousel .hero-desc {

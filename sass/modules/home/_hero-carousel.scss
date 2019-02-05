@@ -18,6 +18,13 @@
             z-index: 10;
             background: $primary-color;
             opacity: 0.45;
+            @include transition(all 0.7s);
+        }
+
+        &:hover {
+            &:after {
+                opacity: 0.3;
+            }
         }
     }
 
@@ -47,7 +54,7 @@
         font-size: 18rem / strip-unit($body-font-size);
         color: #fff;
         margin-bottom: 30px;
-        line-height:25rem / strip-unit($body-font-size);
+        line-height: 25rem / strip-unit($body-font-size);
     }
 
     .hero-nav {
@@ -68,20 +75,20 @@
             button {
                 margin: 10px -5px;
                 color: transparent;
-                height:60px;
-                display:block;
-                padding:0 5px;
-                cursor:pointer;
+                height: 60px;
+                display: block;
+                padding: 0 5px;
+                cursor: pointer;
                 @extend %remove-default-style;
 
                 &:before {
-                    content:'';
+                    content: '';
                     width: 3px;
                     height: 60px;
                     background: #fff !important;
                     display: block;
-                    border-radius:10px;
-                    margin:0;
+                    border-radius: 10px;
+                    margin: 0;
                     @include transition();
                 }
             }

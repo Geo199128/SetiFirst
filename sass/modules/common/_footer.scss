@@ -33,7 +33,7 @@ footer {
         display: block;
 
         img {
-            @extend %object-fit-cover;
+            height:100%;
         }
     }
 
