@@ -217,6 +217,11 @@ var InitHomeVideo = function () {
 }
 
 //Init popup
+var RenderPopups = function(){
+    if($('.popup').length){
+        $('.popup .popup-content').fadeOut(0);
+    }
+}
 var InitPopup = function (container) {
     var popup = $('.popup');
     $('body').addClass('unscrollable');
@@ -278,6 +283,7 @@ $(document).ready(function () {
     InitCarousels();
     InitParallax();
     RenderFixedDetailsMenu();
+    RenderPopups();
 
     if ($('#home-video').length) {
         InitHomeVideo();
@@ -318,9 +324,10 @@ $(document).ready(function () {
         });
     }
 
-    if ($('.program-full-itinerary-btn').length) {
-        $('.program-full-itinerary-btn').on('click', function () {
-            InitPopup($('#program-itinerary-popup'));
+    if ($('[data-popup]').length) {
+        $('[data-popup]').on('click', function () {
+            var popup = $(this).attr('data-popup');
+            InitPopup($('#' + popup));
         });
     }
 });

@@ -667,7 +667,7 @@ button:focus {
   background: transparent;
 }
 
-header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before, #program-itinerary-popup:before, header .container, header .container .top-nav .main-menu, .other-section .other-item-container .item h4, .inners-banner .container, .hero-carousel .hero-desc, .home-about .about-info, .home-about .about-image, .home-video .container, .landing-item .landing-item-container, .details-rooms-facilities .facilities-container h3, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-type span, .details-rooms-facilities .rooms-container .room-item .room-info, #program-itinerary-popup .program-full-itinerary {
+.popup:before, header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before, .popup .popup-data, header .container, header .container .top-nav .main-menu, .other-section .other-item-container .item h4, .inners-banner .container, .hero-carousel .hero-desc, .home-about .about-info, .home-about .about-image, .home-video .container, .landing-item .landing-item-container, .details-rooms-facilities .facilities-container h3, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-type span, .details-rooms-facilities .rooms-container .room-item .room-info {
   display: inline-block;
   vertical-align: middle;
 }
@@ -676,16 +676,16 @@ header:before, header .container .top-nav:before, .other-section .other-item-con
 input[type=email],
 input[type=password],
 select,
-textarea, .inners-filter, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav .explore-menu a, header .container .bottom-nav .search-lang .search .search-toggle-btn, footer, footer .footer-grid .footer-column, .setifirst-group-logos-container .setifirst-group-logos a, .setifirst-group-logos-container .setifirst-group-logos a .setifirst-logo, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, #program-itinerary-popup, .details-deck-plans .deck-plans-container .deck-plans-item {
+textarea, .inners-filter, .popup .popup-data, header li, header .container, header .container .top-nav .main-menu li a, header .container .top-nav .main-menu li a:visited, header .container .top-nav .socials li, header .container .bottom-nav .explore-menu a, header .container .bottom-nav .search-lang .search .search-toggle-btn, footer, footer .footer-grid .footer-column, .setifirst-group-logos-container .setifirst-group-logos a, .setifirst-group-logos-container .setifirst-group-logos a .setifirst-logo, .home-about .about-info, .latest-news .news-item, .latest-news .news-content, .contact-us .form-field, .listing-item, .landing-item, .content-section ul li, .details-rooms-facilities .facilities-container ul, .details-rooms-facilities .facilities-container ul li:before, .details-rooms-facilities .rooms-container .room-item .room-type, .details-rooms-facilities .rooms-container .room-item .room-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.label, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info span.sailing-date, .details-deck-plans .deck-plans-container .deck-plans-item {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-header, header .container .top-nav, .other-section .other-item-container .item .other-img, .inners-banner, .hero-carousel .hero-item, .home-video, .landing-item, .details-rooms-facilities .rooms-container .room-item .room-type, #program-itinerary-popup {
+.popup, header, header .container .top-nav, .other-section .other-item-container .item .other-img, .inners-banner, .hero-carousel .hero-item, .home-video, .landing-item, .details-rooms-facilities .rooms-container .room-item .room-type {
   text-align: center;
 }
 
-header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before, #program-itinerary-popup:before {
+.popup:before, header:before, header .container .top-nav:before, .other-section .other-item-container .item .other-img:before, .inners-banner:before, .hero-carousel .hero-item:before, .home-video:before, .landing-item:before, .details-rooms-facilities .rooms-container .room-item .room-type:before {
   content: '';
   width: 0;
   height: 100%;
@@ -1247,8 +1247,47 @@ textarea {
   width: 80vw;
   height: 80vh;
   margin: 0 auto;
-  margin-top: 10vh;
-  display: none;
+  display: inline-block;
+}
+
+.popup .popup-data {
+  background: #fff;
+  padding: 35px 25px;
+  overflow: auto;
+  height: auto;
+  max-height: 80vh;
+}
+
+.popup .popup-data .data-container {
+  width: 95%;
+  text-align: left;
+}
+
+.popup .popup-data .data-container h2 {
+  text-align: left;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.popup .popup-data .data-container h2:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: #012349;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+.popup .popup-data .data-container h3 {
+  margin-bottom: 15px;
+}
+
+.popup .popup-data .data-container p {
+  margin-bottom: 25px;
 }
 
 header {
@@ -2646,44 +2685,6 @@ footer .footer-info div {
   height: 100%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-}
-
-#program-itinerary-popup {
-  background: #fff;
-  padding: 35px 25px;
-  overflow: auto;
-}
-
-#program-itinerary-popup .program-full-itinerary {
-  width: 95%;
-  text-align: left;
-}
-
-#program-itinerary-popup .program-full-itinerary h2 {
-  text-align: left;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-#program-itinerary-popup .program-full-itinerary h2:after {
-  content: '';
-  display: block;
-  width: 50%;
-  height: 3px;
-  background: #012349;
-  position: absolute;
-  left: 0;
-  top: 100%;
-}
-
-#program-itinerary-popup .program-full-itinerary h3 {
-  margin-bottom: 15px;
-}
-
-#program-itinerary-popup .program-full-itinerary p {
-  margin-bottom: 25px;
 }
 
 .details-deck-plans .deck-plans-container {
