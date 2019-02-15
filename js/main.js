@@ -1,5 +1,5 @@
 //Function to include html and svg icons in details facilities files
-function includeHTML() {
+function IncludeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */
     z = document.getElementsByTagName("*");
@@ -21,7 +21,7 @@ function includeHTML() {
                     }
                     /* Remove the attribute, and call this function once more: */
                     elmnt.removeAttribute("w3-include-html");
-                    includeHTML();
+                    IncludeHTML();
                 }
             }
             xhttp.open("GET", file, true);
@@ -33,8 +33,6 @@ function includeHTML() {
         }
     }
 }
-
-includeHTML();
 
 //Global variables
 $window = $(window);
@@ -217,8 +215,8 @@ var InitHomeVideo = function () {
 }
 
 //Init popup
-var RenderPopups = function(){
-    if($('.popup').length){
+var RenderPopups = function () {
+    if ($('.popup').length) {
         $('.popup .popup-content').fadeOut(0);
     }
 }
@@ -228,6 +226,9 @@ var InitPopup = function (container) {
     popup.fadeIn(300).find(container).fadeIn(300);
     $(popup, popup.find('.popup-close-btn')).off().on('click', function (e) {
         if (!$(e.target).closest('.popup-content').length && !$(e.target).hasClass('.popup-content')) {
+            if ($(e.target).closest('.popup').find('.room-gallery').length) {
+                $(e.target).closest('.popup').find('.room-gallery').remove();
+            }
             popup.fadeOut(300).find(container).fadeOut(300);
             setTimeout(function () {
                 $('body').removeClass('unscrollable');
@@ -280,6 +281,7 @@ var RenderFixedDetailsMenu = function () {
 }
 
 $(document).ready(function () {
+    IncludeHTML();
     InitCarousels();
     InitParallax();
     RenderFixedDetailsMenu();
@@ -289,11 +291,13 @@ $(document).ready(function () {
         InitHomeVideo();
     }
 
-    if ($('.search-toggle-btn').length) {
-        $('.search-toggle-btn').on('click', function () {
+    //if ($('.search-toggle-btn').length) {
+    $(document).on('click', function (e) {
+        if ($(e.target).hasClass('search-toggle-btn')) {
             $('.search-field').toggleClass('active');
-        });
-    }
+        }
+    });
+    //}
 
     if ($('.view-map-btn').length) {
         $('.view-map-btn').on('click', function () {
@@ -327,6 +331,35 @@ $(document).ready(function () {
     if ($('[data-popup]').length) {
         $('[data-popup]').on('click', function () {
             var popup = $(this).attr('data-popup');
+            if ($(this).hasClass('room-type')) {
+                $('#' + popup).html($(this).siblings('.room-gallery').clone());
+                var popupGalleryCarousel = $('#' + popup).find('.room-gallery-carousel');
+                var popupGalleryRelatedCarousel = $('#' + popup).find('.room-gallery-related-carousel');
+                popupGalleryCarousel.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    speed: 500,
+                    fade: true,
+                    arrows: false,
+                    dots: false,
+                    asNavFor: popupGalleryRelatedCarousel,
+                    cssEase: 'linear'
+                });
+                popupGalleryRelatedCarousel.slick({
+                    slidesToShow: 9,
+                    slidesToScroll: 1,
+                    infinity: false,
+                    asNavFor: popupGalleryCarousel,
+                    speed: 250,
+                    arrows: true,
+                    prevArrow: $('#' + popup).find('.room-gallery-prev'),
+                    nextArrow: $('#' + popup).find('.room-gallery-next'),
+                    dots: false,
+                    centerMode: true,
+                    focusOnSelect: true,
+                    cssEase: 'ease'
+                });
+            }
             InitPopup($('#' + popup));
         });
     }

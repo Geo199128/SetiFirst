@@ -2,7 +2,7 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 110;
     display: none;
     @extend %pseudo-vertical-align;
@@ -22,14 +22,18 @@
         margin: 0 auto;
         //margin-top: 10vh;
         display: inline-block;
+
+        &:not(.popup-data){
+            padding: 10vh 0;
+        }
     }
 
     .popup-data {
         background: #fff;
         padding: 35px 25px;
         overflow: auto;
-        height:auto;
-        max-height:80vh;
+        height: auto;
+        max-height: 80vh;
         @extend %vertical-align;
         @extend %box-sizing;
 

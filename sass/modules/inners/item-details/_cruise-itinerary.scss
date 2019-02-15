@@ -5,23 +5,31 @@
         margin: 0 -20px;
         position: relative;
 
+        .slick-track {
+            display: flex;
+        }
+
         .cruise-itinerary-item {
             padding: 0 10px;
+            height: auto;
+            flex: 0 0 auto;
             @extend %box-sizing;
 
             .cruise-itinerary-info {
                 padding: 50px 20px;
                 border: 3px solid $primary-color;
                 text-align: center;
+                height:100%;
                 color: $primary-color;
                 @extend %box-sizing;
 
-                .sailing-date,.itinerary-details-btn{
-                    width:100%;
+                .sailing-date,
+                .itinerary-details-btn {
+                    width: 100%;
                 }
 
-                .itinerary-details-btn{
-                    font-weight:bold;
+                .itinerary-details-btn {
+                    font-weight: bold;
                 }
 
                 span {
@@ -65,13 +73,13 @@
             display: block;
 
             a {
-                background:$primary-color!important;
-                border:2px solid $primary-color;
-                margin-top:20px;
+                background: $primary-color !important;
+                border: 2px solid $primary-color;
+                margin-top: 20px;
 
-                &:hover{
-                    background:transparent!important;
-                    color:$primary-color!important;
+                &:hover {
+                    background: transparent !important;
+                    color: $primary-color !important;
                 }
             }
         }

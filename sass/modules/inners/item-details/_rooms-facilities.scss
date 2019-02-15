@@ -8,7 +8,7 @@
     .facilities-container {
         display: inline-block;
         width: 100%;
-        margin-bottom:50px;
+        margin-bottom: 50px;
 
         h3 {
             font: 900 $h3-font-size $primary-font;
@@ -104,6 +104,7 @@
                 font: 900 20rem / strip-unit($body-font-size) $primary-font;
                 color: $primary-color;
                 text-transform: uppercase;
+                cursor: pointer;
                 @extend %box-sizing;
                 @extend %pseudo-vertical-align;
                 @extend %vertical-align;
@@ -136,6 +137,80 @@
                     &.room-notice {
                         color: $secondary-color;
                     }
+                }
+            }
+
+            .room-gallery {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                z-index: -10;
+                left: 9999px;
+            }
+        }
+    }
+}
+
+#rooms-gallery-popup {
+    .room-gallery-container {
+        position: relative;
+
+        .room-gallery-carousel {
+            margin-bottom: 20px;
+
+            .gallery-item {
+                background-color: transparent !important;
+                height: calc(80vh - 120px);
+            }
+        }
+
+        .room-gallery-related-carousel {
+            .gallery-item {
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                cursor: pointer;
+                @include transition;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    background: #000;
+                    opacity: 0.5;
+                    z-index: 10;
+                    @include transition;
+                }
+
+                &.slick-current:before,
+                &:hover:before {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .room-gallery-nav {
+            position: static;
+            display: block;
+
+            a {
+                position: absolute;
+                display: block;
+                top: 50%;
+
+                &.nav-prev {
+                    left: 0;
+                    @include transform(translateY(calc(-50% - 50px)) rotate(180deg));
+                }
+
+                &.nav-next {
+                    right: 0;
+                    @include transform(translateY(calc(-50% - 50px)));
                 }
             }
         }

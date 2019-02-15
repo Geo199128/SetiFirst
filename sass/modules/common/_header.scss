@@ -138,6 +138,10 @@ header {
                     .search-toggle-btn {
                         padding: 0 15px;
                         @extend %box-sizing;
+
+                        i{
+                            pointer-events: none;
+                        }
                     }
 
                     .search-field {

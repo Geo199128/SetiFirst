@@ -1022,8 +1022,18 @@ ul {
   animation: pulse 1s infinite;
 }
 
+.slick-arrow {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .slick-arrow.slick-hidden {
   display: none !important;
+}
+
+.slick-arrow.slick-disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .socials {
@@ -1229,7 +1239,7 @@ textarea {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 110;
   display: none;
 }
@@ -1248,6 +1258,10 @@ textarea {
   height: 80vh;
   margin: 0 auto;
   display: inline-block;
+}
+
+.popup .popup-content:not(.popup-data) {
+  padding: 10vh 0;
 }
 
 .popup .popup-data {
@@ -1408,6 +1422,10 @@ header .container .bottom-nav .search-lang .search {
 
 header .container .bottom-nav .search-lang .search .search-toggle-btn {
   padding: 0 15px;
+}
+
+header .container .bottom-nav .search-lang .search .search-toggle-btn i {
+  pointer-events: none;
 }
 
 header .container .bottom-nav .search-lang .search .search-field {
@@ -2485,6 +2503,7 @@ footer .footer-info div {
   font: 900 1.42857rem "Poppins";
   color: #012349;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .details-rooms-facilities .rooms-container .room-item .room-type span {
@@ -2511,6 +2530,79 @@ footer .footer-info div {
   color: #f6aa00;
 }
 
+.details-rooms-facilities .rooms-container .room-item .room-gallery {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: -10;
+  left: 9999px;
+}
+
+#rooms-gallery-popup .room-gallery-container {
+  position: relative;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-carousel {
+  margin-bottom: 20px;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-carousel .gallery-item {
+  background-color: transparent !important;
+  height: calc(80vh - 120px);
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-related-carousel .gallery-item {
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-related-carousel .gallery-item:before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index: 10;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-related-carousel .gallery-item.slick-current:before, #rooms-gallery-popup .room-gallery-container .room-gallery-related-carousel .gallery-item:hover:before {
+  opacity: 0;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-nav {
+  position: static;
+  display: block;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-nav a {
+  position: absolute;
+  display: block;
+  top: 50%;
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-nav a.nav-prev {
+  left: 0;
+  -webkit-transform: translateY(calc(-50% - 50px)) rotate(180deg);
+  transform: translateY(calc(-50% - 50px)) rotate(180deg);
+}
+
+#rooms-gallery-popup .room-gallery-container .room-gallery-nav a.nav-next {
+  right: 0;
+  -webkit-transform: translateY(calc(-50% - 50px));
+  transform: translateY(calc(-50% - 50px));
+}
+
 .details-cruise-itinerary {
   background: #f6aa00;
 }
@@ -2520,18 +2612,30 @@ footer .footer-info div {
   position: relative;
 }
 
+.details-cruise-itinerary .cruise-itinerary-container .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item {
   padding: 0 10px;
+  height: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info {
   padding: 50px 20px;
   border: 3px solid #012349;
   text-align: center;
+  height: 100%;
   color: #012349;
 }
 
-.details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .sailing-date, .details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .itinerary-details-btn {
+.details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .sailing-date,
+.details-cruise-itinerary .cruise-itinerary-container .cruise-itinerary-item .cruise-itinerary-info .itinerary-details-btn {
   width: 100%;
 }
 

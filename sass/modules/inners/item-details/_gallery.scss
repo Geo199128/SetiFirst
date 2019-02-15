@@ -9,56 +9,6 @@
         .gallery-item {
             height: 550px;
         }
-
-        // .slick-dots {
-        //     position: absolute;
-        //     bottom: 20px;
-        //     left: 20px;
-        //     right: 20px;
-        //     margin: 0 auto;
-        //     text-align:center;
-
-        //     li {
-        //         width: calc(100% / 10);
-        //         display:inline-block;
-        //         overflow: hidden;
-        //         padding: 0 10px;
-
-        //         @extend %box-sizing;
-
-        //         a {
-        //             display: block;
-        //             width:100%;
-        //             padding-bottom:100%;
-        //             border:1px solid rgba(0,0,0,0.5);
-        //             overflow: hidden;
-        //             position: relative;
-        //             @include transition;
-
-        //             &:before {
-        //                 content: '';
-        //                 display: block;
-        //                 position: absolute;
-        //                 right: 0;
-        //                 left: 0;
-        //                 top: 0;
-        //                 bottom: 0;
-        //                 background: #000;
-        //                 opacity: 0.5;
-        //                 z-index:10;
-        //                 @include transition;
-        //             }
-        //         }
-
-        //         &.slick-active a{
-        //             border-color:$secondary-color;
-        //         }
-        //         &.slick-active a:before,
-        //         & a:hover:before {
-        //             opacity: 0;
-        //         }
-        //     }
-        // }
     }
 
     .gallery-related-carousel {

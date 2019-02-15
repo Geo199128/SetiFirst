@@ -167,6 +167,15 @@ ul {
     }
 }
 
-.slick-arrow.slick-hidden {
-    display: none!important;
+.slick-arrow {
+    @include transition;
+
+    &.slick-hidden {
+        display: none !important;
+    }
+
+    &.slick-disabled {
+        opacity: 0.3;
+        pointer-events: none;
+    }
 }
