@@ -5,6 +5,15 @@
 .gallery-container {
     position: relative;
 
+    .gallery-related-carousel {
+        background: #ddd;
+
+        .slick-track {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
     .gallery-carousel {
         .gallery-item {
             height: 550px;

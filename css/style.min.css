@@ -2339,6 +2339,15 @@ footer .footer-info div {
   position: relative;
 }
 
+.gallery-container .gallery-related-carousel {
+  background: #ddd;
+}
+
+.gallery-container .gallery-related-carousel .slick-track {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .gallery-container .gallery-carousel .gallery-item {
   height: 550px;
 }
